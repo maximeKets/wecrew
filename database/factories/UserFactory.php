@@ -18,11 +18,18 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake()->name(),
+            'username' => fake()->firstName().' '.fake()->lastName(),
             'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
+            'discord' => fake()->url(),
+            'about' => fake()->paragraph(),
+            'twitter' => fake()->url(),
+            'email_verified_at' => fake()->dateTimeThisDecade(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
+            'is_admin' => fake()->boolean(10),
+            'profil_picture' => fake()->filePath(),
+            'category_id' => fake()->numberBetween(1, 6),
+
         ];
     }
 
@@ -33,8 +40,8 @@ class UserFactory extends Factory
      */
     public function unverified()
     {
-        return $this->state(fn (array $attributes) => [
-            'email_verified_at' => null,
-        ]);
+        /* return $this->state(fn (array $attributes) => [
+             'email_verified_at' => null,
+         ]);*/
     }
 }
