@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.body {
+    font-family: trade-gothic-next, sans-serif;
+    font-style: italic;
+    background: #efeee9;
+}
