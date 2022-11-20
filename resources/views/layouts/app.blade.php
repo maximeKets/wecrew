@@ -8,12 +8,13 @@
         <title>{{ config('app.name', 'W3CREW') }}</title>
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+        <script src="https://use.typekit.net/bez5hou.js" type="text/javascript"></script>
+
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-title bg-background antialiased">
+    <body class=" bg-background antialiased">
         <div class="min-h-screen ">
             @include('layouts.navigation')
 

@@ -8,13 +8,13 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+        <script src="https://use.typekit.net/bez5hou.js" type="text/javascript"></script>
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="bg-background">
-        <div class="font-title text-gray-900 antialiased">
+        <div class=" antialiased">
             {{ $slot }}
         </div>
     </body>
