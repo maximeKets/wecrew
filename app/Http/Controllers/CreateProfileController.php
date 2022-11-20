@@ -3,19 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CreateProfileController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth', 'verified']);
+        $this->middleware('auth');
+
     }
 
-
-      public function show1()
+    public function show1()
         {
+            $user = Auth::user();
 
-            return view('createprofile.step1');
+            return view('createprofile.step1', compact('user'));
         }
 
         public function store1(Request $request)

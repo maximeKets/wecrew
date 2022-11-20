@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <x-auth-card>
+    <x-card>
 
         <x-slot name="header">
             <div class="pt-2 sm:px-2 sm:pt-4 -mb-10 sm:-mb-10 m-2">
@@ -84,5 +84,5 @@
                 </a>
             </div>
         </form>
-    </x-auth-card>
+    </x-card>
 </x-guest-layout>

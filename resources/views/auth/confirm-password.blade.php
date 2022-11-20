@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <x-auth-card>
+    <x-card>
 
 
         <div class="mb-4 text-sm text-gray-600">
@@ -27,5 +27,5 @@
                 </x-primary-button>
             </div>
         </form>
-    </x-auth-card>
+    </x-card>
 </x-guest-layout>
