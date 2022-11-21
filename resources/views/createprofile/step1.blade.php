@@ -42,6 +42,7 @@
                         <x-card-text>
                             and show us what you've got!
                         </x-card-text>
+                        <x-input-error :messages="$errors->get('profil_picture')"/>
                     </div>
                     <div id="form-picture" class="flex justify-end ">
                         <label for="profil_picture"
@@ -61,17 +62,20 @@
                         </label>
                         <input type="file" name="profil_picture"
                                id="profil_picture"
-                               accept="image/png, image/jpeg" hidden required>
+                               accept="image/png, image/jpeg" hidden>
                     </div>
                 </div>
             </x-form>
 
             <x-form>
                 <x-input-title title="about you"/>
-                <textarea class="rounded-2xl italic block mt-2 w-full italic focus:ring-ok shadow-sm"
+                <textarea class="rounded-2xl italic focus:border-ok
+                                focus:ring-ok block mt-2 w-full italic "
                           name="about"
+                          :value="old('about')"
                           maxlength="500"
                           placeholder="talk about who you are and what yo like, your passions and what gets you excited! Why are you working in Web3? anything that you add can help you get hired."></textarea>
+                <x-input-error :messages="$errors->get('about')"/>
             </x-form>
             <x-form>
                 <x-input-title title="Your socials"/>

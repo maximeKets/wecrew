@@ -25,11 +25,16 @@ class CreateProfileController extends Controller
     public function store1(Request $request)
     {
         $validate = $request->validate([
+
+            'profil_picture'=> 'required',
             'about' => 'required',
             'twitter' => 'required',
             'discord' => 'required',
 
         ]);
+
+
+
         $pathUserPicture = $request->file('profil_picture')->storeAs('public/profil_picture', "user_" . Auth::user()->id . ".jpg");
         $user = Auth::user();
         $user->about = $validate['about'];
@@ -37,6 +42,8 @@ class CreateProfileController extends Controller
         $user->discord = $validate['discord'];
         $user->profil_picture = $pathUserPicture;
         $user->save();
+
+
 
 
         return redirect()->route('createprofile.step2');
