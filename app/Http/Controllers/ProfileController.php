@@ -22,6 +22,12 @@ class ProfileController extends Controller
         ]);
     }
 
+    public function show(Request $request)
+    {
+        $user = $request->user()->load('projects', 'skills');
+        return view('profile.show', ['user' => $user]);
+    }
+
     /**
      * Update the user's profile information.
      *

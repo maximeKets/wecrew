@@ -22,81 +22,84 @@
                               extra="there's only one of you {{$user->username}} "/>
         </x-slot>
 
-        <x-form>
-            <x-input-title title="Your web3 Presence"/>
+        <form action="{{route("createprofile.step1")}}" method="POST" autocomplete="on" enctype="multipart/form-data">
+            @csrf
+            <x-form>
+                <x-input-title title="Your web3 Presence"/>
 
-            <x-card-text>
-                connect yout wallet
-            </x-card-text>
-        </x-form>
+                <x-card-text>
+                    connect yout wallet
+                </x-card-text>
+            </x-form>
 
-        <x-form >
-            <div class="grid grid-cols-2">
-                <div>
-                    <x-input-title title="PFP"/>
-                    <x-card-text>
-                        Pick your avatar
-                    </x-card-text>
-                    <x-card-text>
-                        and show us what you've got!
-                    </x-card-text>
+            <x-form>
+                <div class="grid grid-cols-2">
+                    <div>
+                        <x-input-title title="PFP"/>
+                        <x-card-text>
+                            Pick your avatar
+                        </x-card-text>
+                        <x-card-text>
+                            and show us what you've got!
+                        </x-card-text>
+                    </div>
+                    <div id="form-picture" class="flex justify-end ">
+                        <label for="profil_picture"
+                               class="border-dashed border-2 border-black  ring-black rounded-full px-9 py-6 aspect-square flex flex-col items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75"/>
+                            </svg>
+                        </label>
+                        <input type="file" name="profil_picture"
+                               id="profil_picture"
+                               accept="image/png, image/jpeg" hidden required>
+                    </div>
                 </div>
-                <div id="form-picture" class="flex justify-end ">
-                    <label for="profil_picture"
-                           class="border-dashed border-2 border-black  ring-black rounded-full px-9 py-6 aspect-square flex flex-col items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                             stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                  d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                  d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z"/>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                             stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                  d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75"/>
-                        </svg>
-                    </label>
-                    <input type="file" name="profil_picture"
-                           id="profil_picture"
-                           accept="image/png, image/jpeg" hidden>
+            </x-form>
+
+            <x-form>
+                <x-input-title title="about you"/>
+                <textarea class="rounded-2xl italic block mt-2 w-full italic focus:ring-ok shadow-sm"
+                          name="about"
+                          maxlength="500"
+                          placeholder="talk about who you are and what yo like, your passions and what gets you excited! Why are you working in Web3? anything that you add can help you get hired."></textarea>
+            </x-form>
+            <x-form>
+                <x-input-title title="Your socials"/>
+                <x-text-input id="twitter"
+                              type="text"
+                              name="twitter"
+                              :value="old('twitter')"
+                              placeholder="@twitter"
+                              required/>
+                <x-input-error :messages="$errors->get('twitter')"/>
+
+                <x-text-input id="discord"
+                              type="text"
+                              name="discord"
+                              :value="old('discord')"
+                              placeholder="@Discord"
+                              required/>
+                <x-input-error :messages="$errors->get('discord')"/>
+            </x-form>
+
+            <x-form>
+                <div class="flex justify-center">
+                    <x-primary-button class="flex justify-center">
+                        Next
+                    </x-primary-button>
                 </div>
-            </div>
-        </x-form>
 
-<x-form>
-    <x-input-title title="about you"/>
-    <textarea class="rounded-2xl italic block mt-2 w-full italic focus:ring-ok rounded-full  shadow-sm"
-              name="about"
-              maxlength="500"
-              placeholder="talk about who you are and what yo like, your passions and what gets you excited! Why are you working in Web3? anything that you add can help you get hired."></textarea>
-</x-form>
-        <x-form>
-            <x-input-title title="Your socials"/>
-            <x-text-input id="twitter"
-                          type="text"
-                          name="twitter"
-                          :value="old('twitter')"
-                          placeholder="@twitter"
-                          required/>
-            <x-input-error :messages="$errors->get('twitter')"/>
-
-            <x-text-input id="discord"
-                          type="text"
-                          name="discord"
-                          :value="old('discord')"
-                          placeholder="@Discord"
-                          required/>
-            <x-input-error :messages="$errors->get('discord')"/>
-        </x-form>
-
-        <x-form>
-            <div class="flex justify-center">
-                <x-primary-button class="flex justify-center">
-                    Next
-                </x-primary-button>
-            </div>
-
-        </x-form>
+            </x-form>
+        </form>
     </x-card>
 </x-app-layout>
