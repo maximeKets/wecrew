@@ -22,7 +22,7 @@
                               extra=""/>
         </x-slot>
 
-        <form action="{{route("createprofile.step2")}}" method="POST">
+        <form action="{{route("createprofile.step2")}}" method="POST" name="form" id="form">
             @csrf
             <x-form>
                 <x-input-title title="Your Category"/>

@@ -6,6 +6,19 @@ window.Alpine = Alpine;
 
 Alpine.start();
 
+let radios = document.forms["form"].elements["category_id"]
+for (let i = 0; i < radios.length; i++) {
+    radios[i].onclick = function () {
+        getCategory().then(r => console.log(r));
+    }
+}
+
+
+const getCategory = async () => {
+    const response = await fetch('http://localhost/usercategory')
+    const myJson = await response.json(); //extract JSON from the http response
+    console.log(myJson);
+}
 
 
 document.getElementById("profil_picture").addEventListener("change", sizeControllerProfile);
