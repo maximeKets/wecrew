@@ -7,7 +7,7 @@ window.Alpine = Alpine;
 Alpine.start();
 
 
-// document.getElementById("profil_picture").addEventListener("change", sizeControllerProfile);
+document.getElementById("profil_picture").addEventListener("change", sizeControllerProfile);
 // document.getElementById("project-picture").addEventListener("change", sizeControllerProject);
 
 function sizeControllerProfile(input) {

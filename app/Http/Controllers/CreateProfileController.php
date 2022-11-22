@@ -59,10 +59,13 @@ class CreateProfileController extends Controller
     {
         $validate = $request->validate([
             'category_id' => 'required',
+            'skills' => 'required',
         ]);
+
 
         $user = Auth::user();
         $user->category_id = $validate['category_id'];
+        $user->skills()->sync($validate['skills']);
         $user->save();
 
         return redirect()->route('createprofile.step3');

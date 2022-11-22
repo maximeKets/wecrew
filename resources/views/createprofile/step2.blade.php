@@ -30,6 +30,7 @@
                 <x-card-text>
                     pick your area of expertise
                 </x-card-text>
+                <x-input-error :messages="$errors->get('category_id')"/>
             </x-form>
 
             <x-form>
@@ -55,10 +56,11 @@
                 <x-card-text>
                     We've pre selected some skills linked to your category.
                 </x-card-text>
+                <x-input-error :messages="$errors->get('skills')"/>
             </x-form>
 
             <xform>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4" id="skills">
+                <div class="grid grid-cols sm:grid-cols-2 sm:m-20 gap-4 " id="skills">
 
                 </div>
             </xform>

@@ -72,10 +72,10 @@
                 <textarea class="rounded-2xl italic focus:border-ok
                                 focus:ring-ok block mt-2 w-full italic "
                           name="about"
-                          :value="old('about')"
+                          value="{{ old('about') }}"
                           maxlength="500"
-                          placeholder="talk about who you are and what yo like, your passions and what gets you excited! Why are you working in Web3? anything that you add can help you get hired."></textarea>
-                <x-input-error :messages="$errors->get('about')"/>
+                          required
+                          placeholder="talk about who you are and what yo like, your passions and what gets you excited! Why are you working in Web3? anything that you add can help you get hired.">{{ old('about') }}</textarea>
             </x-form>
             <x-form>
                 <x-input-title title="Your socials"/>
