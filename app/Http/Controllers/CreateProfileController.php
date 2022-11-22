@@ -26,13 +26,12 @@ class CreateProfileController extends Controller
     {
         $validate = $request->validate([
 
-            'profil_picture'=> 'required',
+            'profil_picture' => 'required',
             'about' => 'required',
             'twitter' => 'required',
             'discord' => 'required',
 
         ]);
-
 
 
         $pathUserPicture = $request->file('profil_picture')->storeAs('public/profil_picture', "user_" . Auth::user()->id . ".jpg");
@@ -42,8 +41,6 @@ class CreateProfileController extends Controller
         $user->discord = $validate['discord'];
         $user->profil_picture = $pathUserPicture;
         $user->save();
-
-
 
 
         return redirect()->route('createprofile.step2');
@@ -92,9 +89,12 @@ class CreateProfileController extends Controller
         $project->user_id = Auth::user()->id;
         $project->save();
 
-        $pathProjectPicture = $request->file('project-picture')->storeAs('public/project_picture', "user_" . Auth::user()->id . "_project_" . $project->id . ".jpg");
-        $project->picture = $pathProjectPicture;
-        $project->push();
+        if ($request->hasFile('project-picture')) {
+            $pathProjectPicture = $request->file('project-picture')->storeAs('public/project_picture', "user_" . Auth::user()->id . "_project_" . $project->id . ".jpg");
+            $project->picture = $pathProjectPicture;
+            $project->push();
+        }
+
 
         return redirect()->route('profile.show')->with('success', 'Profile created successfully');
     }
