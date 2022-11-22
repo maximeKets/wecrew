@@ -39,13 +39,13 @@
                               name="project-name"
                               :value="old('project-name')"
                               placeholder="project name"
-                              required/>
+                              />
                 <x-input-error :messages="$errors->get('project-name')"/>
             </x-form>
             <x-form><textarea class="rounded-2xl italic block mt-2 w-full italic focus:ring-ok shadow-sm"
                               name="project-description"
                               maxlength="600"
-                              placeholder="think of the project hiring you, they need to know what you did, how you did it and what success uou had. be specific."></textarea>
+                              placeholder="think of the project hiring you, they need to know what you did, how you did it and what success uou had. be specific.">{{old('project-description')}}</textarea>
             </x-form>
             <x-form>
                 <x-text-input id="project-url"
@@ -53,12 +53,12 @@
                               name="project-url"
                               :value="old('project-url')"
                               placeholder="project links (put many if needed)"
-                              required/>
+                              />
                 <x-input-error :messages="$errors->get('project-url')"/>
             </x-form>
 
             <x-form>
-                <div class="flex gap-4 grid grid-cols-2">
+                <div class="flex gap-4 grid sm:grid-cols-2">
                     <div class="flex flex-col items-center ">
                         <x-card-text>
                             upload project visual 16:9
@@ -66,6 +66,7 @@
                         <x-card-text>
                             minimum 960x600px
                         </x-card-text>
+
 
                     </div>
                     <div id="form-picture-2">

@@ -6,9 +6,25 @@ window.Alpine = Alpine;
 
 Alpine.start();
 
+if (document.getElementById("profil_picture")) {
+    document.getElementById("profil_picture").addEventListener("change", sizeControllerProfile);
+}
+if (document.getElementById("skills")) {
+    let radios = document.forms["form"].elements["category_id"]
+    for (let i = 0; i < radios.length; i++) {
+        radios[i].onclick = function () {
+            let myDiv = document.getElementById("skills");
+            while (myDiv.firstChild) {
+                myDiv.removeChild(myDiv.firstChild);
+            }
+            skillsAPI(this.value)
+        }
+    }
+}
+if (document.getElementById("project-picture")) {
+    document.getElementById("project-picture").addEventListener("change", sizeControllerProject);
+}
 
-document.getElementById("profil_picture").addEventListener("change", sizeControllerProfile);
-// document.getElementById("project-picture").addEventListener("change", sizeControllerProject);
 
 function sizeControllerProfile(input) {
     let file = input.target.files[0];
@@ -22,8 +38,11 @@ function sizeControllerProfile(input) {
         let img = document.createElement("img");
         img.src = URL.createObjectURL(file);
         img.classList.add("rounded-full");
-        img.style.maxWidth = "104px";
-        img.style.maxHeight = "104px";
+        img.classList.add("aspect-square");
+        img.classList.add("w-full");
+
+
+        parent.style.maxWidth = "200px";
         parent.prepend(img);
     }
 }
@@ -39,25 +58,15 @@ function sizeControllerProject(input) {
 
         let img = document.createElement("img");
         img.src = URL.createObjectURL(file);
-        img.classList.add("rounded-full");
-        img.style.maxWidth = "200px";
-        img.style.maxHeight = "200px";
+        img.classList.add("rounded-2xl");
+        img.classList.add("aspect-video");
+        img.style.maxHeight = "50px";
+        img.style.maxWidth = "50px";
         parent.prepend(img);
     }
 }
 
-let radios = document.forms["form"].elements["category_id"]
-for (let i = 0; i < radios.length; i++) {
-    radios[i].onclick = function () {
-        let myDiv = document.getElementById("skills");
-        while (myDiv.firstChild) {
-            myDiv.removeChild(myDiv.firstChild);
-        }
-        testAPI(this.value)
-    }
-}
-
-function testAPI(id) {
+function skillsAPI(id) {
     fetch('/api/skills/' + id)
         .then((response) => response.json())
         .then((data) => {
@@ -73,10 +82,6 @@ function testAPI(id) {
                 checkbox.value = value.id;
                 checkbox.id = value.name;
              //  checkbox.classList.add("hidden");
-
-
-
-
 
                 // creating label for checkbox
                 let label = document.createElement('label');
@@ -105,9 +110,6 @@ function testAPI(id) {
                 div.appendChild(checkbox);
                 div.appendChild(label);
                 myDiv.appendChild(div);
-
-
-
             }
         });
 }
