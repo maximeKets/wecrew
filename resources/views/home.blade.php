@@ -21,8 +21,8 @@
     <div class="container-2 w-container">
         <a  href="/#" class="w-nav-brand"><img src=" {{ asset('/images/WECrEW_Colour.svg') }}" loading="lazy" width="155" alt="" class="image-2"></a>
         <nav role="navigation" class="nav-menu w-nav-menu">
-            <a  href="/http://localhost/login" class="nav-link-simple w-nav-link">sign in</a>
-            <a  href="/http://localhost/register" class="nav-link w-nav-link">join the crew</a>
+            <a  href="{{route('login')}}" class="nav-link-simple w-nav-link">sign in</a>
+            <a  href="{{route('register')}}" class="nav-link w-nav-link">join the crew</a>
         </nav>
         <div class="menu-button w-nav-button">
             <div class="icon-2 w-icon-nav-menu"></div>

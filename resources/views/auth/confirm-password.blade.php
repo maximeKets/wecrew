@@ -1,6 +1,11 @@
 <x-guest-layout>
     <x-card>
 
+        <x-slot name="header">
+
+            <x-header-content title="" subtitle="" extra=" " class="flex justify-center"/>
+
+        </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
             {{ __('This is a secure area of the application. Please confirm your password before continuing.') }}

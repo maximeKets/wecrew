@@ -17,8 +17,7 @@ class HomeController extends Controller
     {
 
 
-        return File::get(public_path() . '/Home/home.blade.php');
-
+        return view('home');
     }
 
     /**

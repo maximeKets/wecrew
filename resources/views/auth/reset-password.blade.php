@@ -1,6 +1,12 @@
 <x-guest-layout>
     <x-card>
 
+        <x-slot name="header">
+
+            <x-header-content title="" subtitle="" extra=" "/>
+
+        </x-slot>
+
         <form method="POST" action="{{ route('password.store') }}">
             @csrf
 
