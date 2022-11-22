@@ -17,3 +17,5 @@ yarn-error.log
 /.vscode
 /storage/app/public/project_picture/
 /storage/app/public/profil_picture/
+/public/project/
+/public/storage/
