@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\APIController;
+use App\Http\Controllers\Api\APIController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,5 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('usercategory',[APIController::class,'usercategory'])->name('usercategory');
+Route::get('skills/{id}',[APIController::class,'getskills']);
 

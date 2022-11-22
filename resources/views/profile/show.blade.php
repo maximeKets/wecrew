@@ -1,15 +1,15 @@
 <x-app-layout>
     <x-card>
         <x-slot name="header">
-            <x-header-content title="Profile" subtitle=""
+            <x-header-content title="your Profile" subtitle=""
                               extra=""/>
         </x-slot>
         <x-form>
-            <div class="px-10 my-4 mt-6 grid grid-cols-2 gap-4  ">
-                <div class="rounded-full flex items-center p-2 bg-green-300">
-                    <img class="rounded-full border-2 border-black aspect-square max-h-16 "
-                         src="{{asset("user/user_".$user->id . ".jpg")}}" alt="">
-                    <h3 class=" flex items-center text-3xl uppercase p-4">{{$user->nickname}}</h3>
+            <div class="grid sm:grid-cols-2 ">
+                <div class="rounded-full grid-cols gap-4 flex items-center p-2 bg-ok">
+                    <img class="rounded-full border-2 border-black aspect-square max-h-16  "
+                         src="{{asset("user/user_".$user->id . ".jpg")}}" alt="profile">
+                    <x-input-title class="flex justify-center" title="{{$user->username}}"/>
                 </div>
             </div>
         </x-form>

@@ -33,15 +33,18 @@
             </x-form>
 
             <x-form>
-                <div class="grid grid-cols-3 gap-4 ">
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 ">
                     @foreach($categories as $category)
                         <div>
-                            <x-text-input name="category_id" type="radio" value="{{$category->id}}" id="{{$category->name}}"
+                            <x-text-input name="category_id" type="radio" value="{{$category->id}}"
+                                          id="{{$category->name}}"
                                           class="peer/radio hidden"/>
-                            <x-input-label for="{{$category->name}}" class="rounded-full border-2 p-1 peer-checked/radio:border-ok">
+                            <x-input-label for="{{$category->name}}"
+                                           class="rounded-full border p-2  peer-checked/radio:border-ok">
                                 {{$category->name}}
                             </x-input-label>
                         </div>
+
                     @endforeach
                 </div>
             </x-form>
@@ -52,12 +55,12 @@
                 <x-card-text>
                     We've pre selected some skills linked to your category.
                 </x-card-text>
-
             </x-form>
 
             <xform>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4" id="skills">
 
-
+                </div>
             </xform>
 
             <x-form>
@@ -69,5 +72,7 @@
 
             </x-form>
         </form>
+
+
     </x-card>
 </x-app-layout>

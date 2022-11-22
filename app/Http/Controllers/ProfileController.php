@@ -22,9 +22,9 @@ class ProfileController extends Controller
         ]);
     }
 
-    public function show(Request $request)
+    public function show()
     {
-        $user = $request->user()->load('projects', 'skills');
+        $user = Auth::user()->load('projects', 'skills');
         return view('profile.show', ['user' => $user]);
     }
 
