@@ -17,26 +17,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::prefix('createprofile')->group(function () {
-    Route::get('/step1', [CreateProfileController::class, 'show1'])->name('createprofile.step1');
-    Route::post('/step1', [CreateProfileController::class, 'store1'])->name('createprofile.step1');
-    Route::get('/step2', [CreateProfileController::class, 'show2'])->name('createprofile.step2');
-    Route::post('/step2', [CreateProfileController::class, 'store2'])->name('createprofile.step2');
-    Route::get('/step3', [CreateProfileController::class, 'show3'])->name('createprofile.step3');
-    Route::post('/step3', [CreateProfileController::class, 'store3'])->name('createprofile.step3');
-})->middleware('auth');
+Route::middleware('auth')->group(function () {
+    Route::prefix('createprofile')->group(function () {
+        Route::get('/step1', [CreateProfileController::class, 'show1'])->name('createprofile.step1');
+        Route::post('/step1', [CreateProfileController::class, 'store1'])->name('createprofile.step1');
+        Route::get('/step2', [CreateProfileController::class, 'show2'])->name('createprofile.step2');
+        Route::post('/step2', [CreateProfileController::class, 'store2'])->name('createprofile.step2');
+        Route::get('/step3', [CreateProfileController::class, 'show3'])->name('createprofile.step3');
+        Route::post('/step3', [CreateProfileController::class, 'store3'])->name('createprofile.step3');
+    });
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/myprofile', [ProfileController::class, 'show'])->name('profile.show');
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::get('/editprofile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

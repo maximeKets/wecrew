@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Auth;
 class CreateProfileController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware(['auth', 'verified']);
+    }
+
     public function show1()
     {
         $user = Auth::user();
