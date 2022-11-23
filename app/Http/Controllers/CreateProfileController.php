@@ -96,7 +96,7 @@ class CreateProfileController extends Controller
         }
 
 
-        return redirect()->route('profile.show')->with('success', 'Profile created successfully');
+        return redirect()->route('profile.show')->with('success', 'Welcome in the W3crew community !');
     }
 
 }
