@@ -46,52 +46,83 @@
                 </div>
             </div>
         </x-form>
-        <x-form>
-            <x-input-title title="experience"/>
-        </x-form>
+
         <x-form>
             @if($user->projects->count() > 0)
+
+                <x-input-title title="experience"/>
                 <div class="grid grid-cols gap-4">
                     @foreach($user->projects as $project)
 
                         <div class="flex flex-col justify-center items-center">
+
+                            @if($project->image)
                             <img class="rounded-xl border-2 border-black aspect-video w-full"
                                  src="{{asset("project/user_".$user->id . "_project_". $project->id . ".jpg")}}">
+                            @endif
                         </div>
+                    <div class="grid grid-cols-2">
                         <div class="flex items-start text-xl font-semibold">
                             {{$project->name}}
                         </div>
+                        <div>
+                            <form method="POST" action="{{ route('project.destroy', [$project->id] ) }}">
+                                @csrf
+                                @method('delete')
+                                <x-danger-button class="flex justify-center text-xs">
+                                    delete this project
+                                </x-danger-button>
+                            </form>
+                        </div>
+                    </div>
 
                         <x-card-text>
                             {{$project->description}}
                         </x-card-text>
+
+
                     @endforeach
                 </div>
             @else
-                <div class="flex justify-center">
-                    <x-input-title class="flex justify-center" title="no experience"/>
+                <div class="grid grid-cols-2">
+                    <x-input-title title=" No experience"/>
+                    <a class="flex justify-center items-center" href="{{route("createprofile.step3")}}">
+                        <span class="rounded-full bg-ok p-2 flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                 stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        Add project
+                        </span>
+                    </a>
                 </div>
+
             @endif
         </x-form>
 
-        <x-form >
+        <x-form>
             <div class="flex justify-center">
-                <section >
+                <section>
                     <x-danger-button
                         x-data=""
                         x-on:click.prevent="$dispatch('open-modal', 'confirm-user-deletion')"
-                    >Delete Account</x-danger-button>
+                    >Delete Account
+                    </x-danger-button>
 
                     <x-modal name="confirm-user-deletion" :show="$errors->userDeletion->isNotEmpty()" focusable>
                         <form method="post" action="{{ route('profile.destroy') }}" class="p-6">
                             @csrf
                             @method('delete')
 
-                            <h2 class="text-lg font-medium text-gray-900">Are you sure your want to delete your account?</h2>
-                            <p class="mt-1 text-sm text-gray-600">Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.</p>
+                            <h2 class="text-lg font-medium text-gray-900">Are you sure your want to delete your
+                                account?</h2>
+                            <p class="mt-1 text-sm text-gray-600">Once your account is deleted, all of its resources and
+                                data will be permanently deleted. Please enter your password to confirm you would like
+                                to permanently delete your account.</p>
 
                             <div class="mt-6">
-                                <x-input-label for="password" value="Password" class="sr-only" />
+                                <x-input-label for="password" value="Password" class="sr-only"/>
 
                                 <x-text-input
                                     id="password"
@@ -101,7 +132,7 @@
                                     placeholder="Password"
                                 />
 
-                                <x-input-error :messages="$errors->userDeletion->get('password')" class="mt-2" />
+                                <x-input-error :messages="$errors->userDeletion->get('password')" class="mt-2"/>
                             </div>
 
                             <div class="mt-6 flex justify-end">

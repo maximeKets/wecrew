@@ -40,9 +40,7 @@ function sizeControllerProfile(input) {
         img.classList.add("rounded-full");
         img.classList.add("aspect-square");
         img.classList.add("w-full");
-
-
-        parent.style.maxWidth = "200px";
+        parent.style.maxWidth = "150px";
         parent.prepend(img);
     }
 }
@@ -60,8 +58,7 @@ function sizeControllerProject(input) {
         img.src = URL.createObjectURL(file);
         img.classList.add("rounded-2xl");
         img.classList.add("aspect-video");
-        img.style.maxHeight = "50px";
-        img.style.maxWidth = "50px";
+        img.style.maxHeight = "400px";
         parent.prepend(img);
     }
 }

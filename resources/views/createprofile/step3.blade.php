@@ -60,7 +60,7 @@
             </x-form>
 
             <x-form>
-                <div class="flex gap-4 grid sm:grid-cols-2">
+                <div class="flex gap-4 grid sm:grid-cols-2 items-center">
                     <div class="flex flex-col items-center ">
                         <x-card-text>
                             upload project visual 16:9
