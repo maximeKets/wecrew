@@ -56,7 +56,7 @@
 
                         <div class="flex flex-col justify-center items-center">
 
-                            @if($project->image)
+                            @if($project->picture)
                             <img class="rounded-xl border-2 border-black aspect-video w-full"
                                  src="{{asset("project/user_".$user->id . "_project_". $project->id . ".jpg")}}">
                             @endif
