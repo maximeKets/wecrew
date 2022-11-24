@@ -19,6 +19,12 @@ body {
     width: 100% !important;
 }
 
+#logo {
+    width: 150px;
+    height: auto;
+    margin: 10px;
+}
+
 p,
 ul,
 ol,
