@@ -62,7 +62,7 @@
                         </label>
                         <input type="file" name="profil_picture"
                                id="profil_picture"
-                               accept="image/png, image/jpeg" hidden>
+                               accept="image/*" hidden>
                     </div>
                 </div>
             </x-form>
@@ -84,6 +84,7 @@
                               name="twitter"
                               :value="old('twitter')"
                               placeholder="@twitter"
+                              minlength="2"
                               required/>
                 <x-input-error :messages="$errors->get('twitter')"/>
 
@@ -92,6 +93,7 @@
                               name="discord"
                               :value="old('discord')"
                               placeholder="@Discord"
+                              minlength="2"
                               required/>
                 <x-input-error :messages="$errors->get('discord')"/>
             </x-form>

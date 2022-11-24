@@ -68,6 +68,7 @@
                         <x-card-text>
                             minimum 960x600px
                         </x-card-text>
+                        <x-input-error :messages="$errors->get('project-picture')"/>
 
 
                     </div>
@@ -88,7 +89,7 @@
 
 
                         <x-text-input id="project-picture"
-                                      accept="image/png, image/jpeg"
+                                      accept="image/*"
                                       type="file"
                                       class="hidden"
                                       name="project-picture"

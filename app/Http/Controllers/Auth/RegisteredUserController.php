@@ -34,10 +34,11 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'username' => ['required', 'string', 'max:255', 'unique:users,username'],
+            'username' => ['required', 'string', 'max:30', 'unique:users,username'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ], [
+            'username.max' => 'Username must be less than 30 characters',
             'username.unique' => 'this name is already taken',
             'email.unique' => 'this email is already taken',
         ]);

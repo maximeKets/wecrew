@@ -26,11 +26,22 @@ class CreateProfileController extends Controller
     {
         $validate = $request->validate([
 
-            'profil_picture' => 'required',
-            'about' => 'required',
-            'twitter' => 'required',
-            'discord' => 'required',
-
+            'profil_picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
+            'about' => 'required|string|max:500',
+            'twitter' => 'required|starts_with:@',
+            'discord' => 'required|starts_with:@',
+        ],
+        [
+            'profil_picture.required' => 'please select a picture',
+            'profil_picture.image' => 'The file must be an image',
+            'profil_picture.mimes' => 'The file must be a jpeg, png, jpg, gif, svg',
+            'profil_picture.max' => 'The file must be less than 4MB',
+            'about.max' => 'The about must be less than 500 characters',
+            'about.required' => 'You must write a short description about you',
+            'twitter.starts_with' => 'The twitter username must start with @',
+            'twitter.required' => 'You must enter your twitter account',
+            'discord.starts_with' => 'The discord username must start with @',
+            'discord.required' => 'You must enter your discord account',
         ]);
 
 
@@ -57,6 +68,10 @@ class CreateProfileController extends Controller
         $validate = $request->validate([
             'category_id' => 'required',
             'skills' => 'required',
+        ],
+        [
+            'category_id.required' => 'You must select a category',
+            'skills.required' => 'You must select at least one skill',
         ]);
 
 
@@ -79,6 +94,15 @@ class CreateProfileController extends Controller
             'project-name' => 'required',
             'project-description' => 'required',
             'project-url' => 'required',
+            'project-picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4096',
+        ],
+        [
+            'project-name.required' => 'please register a name for your project',
+            'project-description.required' => 'enter a description for your project',
+            'project-url.required' => 'give us the url of your project (github, gitlab, etc.)',
+            'project-picture.image' => 'The file must be an image',
+            'project-picture.mimes' => 'The file must be a jpeg, png, jpg, gif, svg',
+            'project-picture.max' => 'The file must be less than 4MB',
         ]);
 
 
