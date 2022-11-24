@@ -15,7 +15,6 @@ if (document.getElementById("project-picture")) {
 }
 
 
-
 function sizeControllerProfile(input) {
     let file = input.target.files[0];
     let fileSize = file.size;
@@ -25,13 +24,18 @@ function sizeControllerProfile(input) {
         let parent = document.getElementById("form-picture")
         parent.children[0].style.display = "none";
 
+        let div = document.createElement("div");
+        div.classList.add("flex");
+        div.classList.add("justify-end");
         let img = document.createElement("img");
         img.src = URL.createObjectURL(file);
         img.classList.add("rounded-full");
         img.classList.add("aspect-square");
         img.classList.add("w-full");
-        parent.style.maxWidth = "150px";
-        parent.prepend(img);
+        img.style.maxHeight = "148px";
+        div.appendChild(img);
+        parent.prepend(div);
+
     }
 }
 
