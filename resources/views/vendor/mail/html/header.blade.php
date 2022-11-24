@@ -2,7 +2,7 @@
 <tr>
 <td class="header">
 
-<img src="https://i.postimg.cc/SKrcz7pM/logo-1.png" id="logo" alt="wecrew Logo">
+<img src="https://i.postimg.cc/kG7vBJG7/logo-2.png" id="logo" alt="wecrew Logo">
 
 </td>
 </tr>
