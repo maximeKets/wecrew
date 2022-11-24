@@ -39,7 +39,15 @@
                         <div>
                             <x-text-input name="category_id" type="radio" value="{{$category->id}}"
                                           id="{{$category->name}}"
-                                          class="peer/radio hidden"/>
+                                          class="peer/radio hidden"
+                                          onclick="
+                                            document.getElementById('category_skills_1').style.display = 'none';
+                                            document.getElementById('category_skills_2').style.display = 'none';
+                                            document.getElementById('category_skills_3').style.display = 'none';
+                                            document.getElementById('category_skills_4').style.display = 'none';
+                                            document.getElementById('category_skills_5').style.display = 'none';
+                                            document.getElementById('category_skills_6').style.display = 'none';
+                                            document.getElementById('category_skills_{{$category->id}}').style.display = 'grid';"  />
                             <x-input-label for="{{$category->name}}"
                                            class="rounded-full border p-2  peer-checked/radio:border-ok">
                                 {{$category->name}}
@@ -60,9 +68,18 @@
             </x-form>
 
             <xform>
-                <div class="grid grid-cols sm:grid-cols-2 sm:m-20 gap-4 " id="skills">
-
-                </div>
+                @foreach($categories as $category)
+                    <div id="category_skills_{{$category->id}}"  class="grid grid-cols sm:grid-cols-2 sm:m-20 gap-4 hidden" class="category_skills">
+                        @foreach($category->skills as $skill)
+                            <div >
+                                <x-text-input name="skills[]" type="checkbox" value="{{$skill->id}}" id="{{$skill->name}}" class="peer/radio hidden"/>
+                                <x-input-label for="{{$skill->name}}" class="rounded-full border p-2  peer-checked/radio:border-ok">
+                                    {{$skill->name}}
+                                </x-input-label>
+                            </div>
+                        @endforeach
+                    </div>
+                @endforeach
             </xform>
 
             <x-form>

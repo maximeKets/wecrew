@@ -9,21 +9,11 @@ Alpine.start();
 if (document.getElementById("profil_picture")) {
     document.getElementById("profil_picture").addEventListener("change", sizeControllerProfile);
 }
-if (document.getElementById("skills")) {
-    let radios = document.forms["form"].elements["category_id"]
-    for (let i = 0; i < radios.length; i++) {
-        radios[i].onclick = function () {
-            let myDiv = document.getElementById("skills");
-            while (myDiv.firstChild) {
-                myDiv.removeChild(myDiv.firstChild);
-            }
-            skillsAPI(this.value)
-        }
-    }
-}
+
 if (document.getElementById("project-picture")) {
     document.getElementById("project-picture").addEventListener("change", sizeControllerProject);
 }
+
 
 
 function sizeControllerProfile(input) {
@@ -78,7 +68,7 @@ function skillsAPI(id) {
                 checkbox.name = "skills[]";
                 checkbox.value = value.id;
                 checkbox.id = value.name;
-             //  checkbox.classList.add("hidden");
+                //  checkbox.classList.add("hidden");
 
                 // creating label for checkbox
                 let label = document.createElement('label');
