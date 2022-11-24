@@ -42,7 +42,7 @@ a img {
 /* Typography */
 
 h1 {
-    color: #3d4852;
+    color: #ccd661;
     font-size: 18px;
     font-weight: bold;
     margin-top: 0;
@@ -241,15 +241,16 @@ img {
     border-left: 18px solid #2d3748;
     border-right: 18px solid #2d3748;
     border-top: 8px solid #2d3748;
+
 }
 
 .button-green,
 .button-success {
-    background-color: #48bb78;
-    border-bottom: 8px solid #48bb78;
-    border-left: 18px solid #48bb78;
-    border-right: 18px solid #48bb78;
-    border-top: 8px solid #48bb78;
+    background-color: #ccd661;
+   border: 1px solid #000000;
+    color: #000000;
+    padding: 10px 20px;
+    border-radius: 25px;
 }
 
 .button-red,
