@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Project;
+use App\Models\Link;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -93,25 +94,36 @@ class CreateProfileController extends Controller
         $validatedProject = $request->validate([
             'project-name' => 'required',
             'project-description' => 'required',
-            'project-url' => 'required',
             'project-picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4096',
         ],
         [
             'project-name.required' => 'please register a name for your project',
             'project-description.required' => 'enter a description for your project',
-            'project-url.required' => 'give us the url of your project (github, gitlab, etc.)',
             'project-picture.image' => 'The file must be an image',
             'project-picture.mimes' => 'The file must be a jpeg, png, jpg, gif, svg',
             'project-picture.max' => 'The file must be less than 4MB',
         ]);
 
+     $validateLinks = $request->validate([
+            'twitter' => 'required|starts_with:@',
+        ],
+        [
+            'twitter.starts_with' => 'The twitter link must start with @',
+            'twitter.required' => 'You must enter a Twitter link',
+        ]);
 
         $project = new Project();
         $project->name = $validatedProject['project-name'];
         $project->description = $validatedProject['project-description'];
-        $project->url = $validatedProject['project-url'];
         $project->user_id = Auth::user()->id;
         $project->save();
+
+        $link = new Link();
+        $link->name = $validateLinks['twitter'];
+        $link->project_id = $project->id;
+        $link->save();
+
+
 
         if ($request->hasFile('project-picture')) {
             $pathProjectPicture = $request->file('project-picture')->storeAs('public/project_picture', "user_" . Auth::user()->id . "_project_" . $project->id . ".jpg");

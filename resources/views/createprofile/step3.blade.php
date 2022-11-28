@@ -49,14 +49,14 @@
                               placeholder="think of the project hiring you, they need to know what you did, how you did it and what success uou had. be specific.">{{old('project-description')}}</textarea>
                 <x-input-error :messages="$errors->get('project-description')"/>
             </x-form>
-            <x-form>
-                <x-text-input id="project-url"
-                              type="url"
-                              name="project-url"
-                              :value="old('project-url')"
-                              placeholder="project links (put many if needed)"
-                              />
-                <x-input-error :messages="$errors->get('project-url')"/>
+            <x-form >
+                    <x-text-input type="text"
+                                  name="twitter"
+                                  :value="old('twitter')"
+                                  placeholder="@Twitter"
+                    />
+                <x-input-error :messages="$errors->get('twitter')"/>
+
             </x-form>
 
             <x-form>
