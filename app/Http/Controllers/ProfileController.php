@@ -41,7 +41,7 @@ class ProfileController extends Controller
         }
         else {
 
-            $user = Auth::user()->load('projects', 'skills');
+            $user = Auth::user()->load('projects.links', 'skills');
             return view('profile.show', ['user' => $user]);
         }
     }

@@ -61,27 +61,23 @@
                                  src="{{asset("project/user_".$user->id . "_project_". $project->id . ".jpg")}}">
                             @endif
                         </div>
-                    <div class="grid grid-cols-2">
+                    <div class="grid grid-cols">
                         <div class="flex items-start text-xl font-semibold">
                             {{$project->name}}
                         </div>
-                        <div>
-                            <form method="POST" action="{{ route('project.destroy', [$project->id] ) }}">
-                                @csrf
-                                @method('delete')
-                                <x-danger-button class="flex justify-center text-xs">
-                                    delete this project
-                                </x-danger-button>
-                            </form>
-                        </div>
                     </div>
-
                         <x-card-text>
                             {{$project->description}}
                         </x-card-text>
-
-
-                    @endforeach
+                      @endforeach
+                      @foreach($project->links as $link)
+                <div class="grid grid-cols sm:grid-cols-3">
+                    <a  class="item-center justify-center flex text-black w-full italic border-2
+ rounded-full border-ok py-2 sm:py-2" href="{{$link->url}}">
+{{$link->name}}
+                    </a>
+                </div>
+                          @endforeach
                 </div>
             @else
                 <div class="grid grid-cols-2">
@@ -97,7 +93,6 @@
                         </span>
                     </a>
                 </div>
-
             @endif
         </x-form>
 

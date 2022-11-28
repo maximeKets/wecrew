@@ -120,6 +120,7 @@ class CreateProfileController extends Controller
 
         $link = new Link();
         $link->name = $validateLinks['twitter'];
+        $link->url = "https://twitter.com/" .$validateLinks['twitter'];
         $link->project_id = $project->id;
         $link->save();
 
