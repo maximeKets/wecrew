@@ -10,7 +10,7 @@ module.exports = {
 
     theme: {
         backgroundImage: {
-            'form-bg': "url('/storage/app/public/Clouds.svg')",
+          //  'form-bg': "url('/storage/app/public/Clouds.svg')",
 
         },
         colors: {
