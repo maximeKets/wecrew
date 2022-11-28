@@ -94,7 +94,7 @@
                               type="text"
                               name="discord"
                               :value="old('discord')"
-                              placeholder="Discord"
+                              placeholder="Discord ID"
                               minlength="2"
                               required/>
                 <x-input-error :messages="$errors->get('discord')"/>

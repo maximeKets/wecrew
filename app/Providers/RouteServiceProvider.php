@@ -17,7 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = 'https://www.w3crew.com/';
+    public const HOME = '/myprofile';
     public const FIRSTCONNECT = '/createprofile/step1';
 
     /**
