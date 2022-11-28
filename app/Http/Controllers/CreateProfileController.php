@@ -93,7 +93,7 @@ class CreateProfileController extends Controller
         $validatedProject = $request->validate([
             'project-name' => 'required',
             'project-description' => 'required',
-            'project-picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4096',
+            'project-picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
         ],
         [
             'project-name.required' => 'please register a name for your project',
@@ -101,6 +101,7 @@ class CreateProfileController extends Controller
             'project-picture.image' => 'The file must be an image',
             'project-picture.mimes' => 'The file must be a jpeg, png, jpg, gif, svg',
             'project-picture.max' => 'The file must be less than 4MB',
+            'project-picture.required' => 'please select a picture for your project',
         ]);
 
      $validateLinks = $request->validate([
