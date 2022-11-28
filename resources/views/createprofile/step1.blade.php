@@ -46,7 +46,7 @@
                     </div>
                     <div id="form-picture" class="flex justify-end ">
                         <label for="profil_picture"
-                               class="border-dashed border-2 border-black  ring-black rounded-full  aspect-square flex flex-col items-center justify-center">
+                               class="border-dashed border-2 border-black  ring-black rounded-full  aspect-square flex flex-col items-center justify-center animate-pulse">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                  stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round"
