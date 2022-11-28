@@ -79,14 +79,19 @@
             </x-form>
             <x-form>
                 <x-input-title title="Your socials"/>
-                <x-text-input id="twitter"
-                              type="text"
-                              name="twitter"
-                              :value="old('twitter')"
-                              placeholder="@twitter"
-                              minlength="2"
-                              required/>
-                <x-input-error :messages="$errors->get('twitter')"/>
+
+
+    <x-text-input id="twitter"
+                  type="text"
+                  name="twitter"
+                  :value="old('twitter')"
+                  placeholder="Twitter"
+                  minlength="2"
+                  required
+  />
+    <x-input-error :messages="$errors->get('twitter')"/>
+
+
 
                 <x-text-input id="discord"
                               type="text"
