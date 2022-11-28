@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-card>
         <x-slot name="header">
-            <x-header-content title="your Profile" subtitle=""
+            <x-header-content title="Profile" subtitle=""
                               extra=""/>
         </x-slot>
         <x-form>
