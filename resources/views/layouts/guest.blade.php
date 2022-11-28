@@ -4,6 +4,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta content="W3CREW is an awesome utility for building teams. Finding a crew for your project has never been easier! W3CREW connects project owners and freelancers in a trusted user friendly platform. No more DMs. No more time wasted. Phase 1 of W3CREW is calling all freelancers working in web3 to set up their profiles." name="description">
+        <meta content="W3CREW - W3&#x27;RE IN BETA - JOIN THE CREW" property="og:title">
+        <meta content="W3CREW is an awesome utility for building teams. Finding a crew for your project has never been easier! W3CREW connects project owners and freelancers in a trusted user friendly platform. No more DMs. No more time wasted. Phase 1 of W3CREW is calling all freelancers working in web3 to set up their profiles." property="og:description">
+        <meta content="https://uploads-ssl.webflow.com/6352b3ee3bc91e36df9c3b4f/6374f05dfd7e607038214714_W3CREW%20webclip.png" property="og:image">
+        <meta content="W3CREW - W3&#x27;RE IN BETA - JOIN THE CREW" property="twitter:title">
+        <meta content="W3CREW is an awesome utility for building teams. Finding a crew for your project has never been easier! W3CREW connects project owners and freelancers in a trusted user friendly platform. No more DMs. No more time wasted. Phase 1 of W3CREW is calling all freelancers working in web3 to set up their profiles." property="twitter:description">
+        <meta content="https://uploads-ssl.webflow.com/6352b3ee3bc91e36df9c3b4f/6374f05dfd7e607038214714_W3CREW%20webclip.png" property="twitter:image">
+        <meta property="og:type" content="website">
+        <meta content="summary_large_image" name="twitter:card">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
