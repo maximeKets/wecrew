@@ -10,3 +10,13 @@ body {
 .font-title {
     font-family: dazzle-unicase, sans-serif !important;
 }
+.header_block {
+    height: 100%;
+    border-radius: 20px 20px 0px 0px;
+    background-image: url('../images/Clouds.svg'), radial-gradient(circle farthest-side at 100% 50%, #25708f, #4eab98);
+    background-position: 50% 150%, 0px 0px;
+    background-size: cover, auto;
+    background-repeat: no-repeat, repeat;
+    -o-object-fit: fill;
+    object-fit: fill;
+}

@@ -53,7 +53,7 @@
         </nav>
 
     </header>
-        <div class="antialiased mt-5" >
+        <div class="antialiased m-5" >
             {{ $slot }}
         </div>
     </body>

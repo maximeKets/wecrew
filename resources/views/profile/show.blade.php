@@ -97,7 +97,7 @@
         </x-form>
 
         <x-form>
-            <div class="flex justify-center">
+            <div class="flex justify-center mt-20">
                 <section>
                     <x-danger-button
                         x-data=""

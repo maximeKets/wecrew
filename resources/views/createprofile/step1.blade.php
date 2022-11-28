@@ -27,9 +27,6 @@
             <x-form>
                 <x-input-title title="Your web3 Presence"/>
 
-                <x-card-text>
-                    connect yout wallet
-                </x-card-text>
             </x-form>
 
             <x-form>
@@ -85,7 +82,7 @@
                   type="text"
                   name="twitter"
                   :value="old('twitter')"
-                  placeholder="Twitter"
+                  placeholder="@Twitter"
                   minlength="2"
                   required
   />
@@ -97,7 +94,7 @@
                               type="text"
                               name="discord"
                               :value="old('discord')"
-                              placeholder="@Discord"
+                              placeholder="Discord"
                               minlength="2"
                               required/>
                 <x-input-error :messages="$errors->get('discord')"/>

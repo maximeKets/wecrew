@@ -30,7 +30,7 @@ class CreateProfileController extends Controller
             'profil_picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
             'about' => 'required|string|max:500',
             'twitter' => 'required|starts_with:@',
-            'discord' => 'required|starts_with:@',
+            'discord' => 'required',
         ],
         [
             'profil_picture.required' => 'please select a picture',
@@ -41,7 +41,6 @@ class CreateProfileController extends Controller
             'about.required' => 'You must write a short description about you',
             'twitter.starts_with' => 'The twitter username must start with @',
             'twitter.required' => 'You must enter your twitter account',
-            'discord.starts_with' => 'The discord username must start with @',
             'discord.required' => 'You must enter your discord account',
         ]);
 
