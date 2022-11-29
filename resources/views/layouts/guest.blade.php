@@ -38,9 +38,9 @@
             <div class="container-2 w-container">
                 <a href="{{route("home")}}" aria-current="page" class="w-nav-brand w--current"><img src="{{asset('storage/logo.svg')}}" loading="lazy" width="155" alt="" class="image-2"></a>
                 <nav role="navigation" class="nav-menu w-nav-menu">
-                    <a href="{{route("home")}}about.html" class="nav-link-simple w-nav-link">about</a>
-                    <a href="https://app.w3crew.com/login" class="nav-link-simple w-nav-link">sign in</a>
-                    <a href="https://app.w3crew.com/register" class="nav-link w-nav-link">join the crew</a>
+                    <a href="https://www.w3crew.com/about.html" class="nav-link-simple w-nav-link">about</a>
+                    <a href="{{route('login')}}" class="nav-link-simple w-nav-link">sign in</a>
+                    <a href="{{route('register')}}" class="nav-link w-nav-link">join the crew</a>
                 </nav>
                 <div class="menu-button w-nav-button">
                     <div class="icon-2 w-icon-nav-menu"></div>
@@ -67,13 +67,13 @@
                 </div>
                 <div class="div-block-6">
                     <div class="footer-menu-block">
-                        <a href="about.html" class="footer-link w-inline-block">
+                        <a href="https://www.w3crew.com/about.html" class="footer-link w-inline-block">
                             <div class="text-block">About</div>
                         </a>
                         <a href="https://cosmic-crew.gitbook.io/cosmic-crew-whitepaper/" target="_blank" class="footer-link w-inline-block">
                             <div class="text-block">Whitepaper</div>
                         </a>
-                        <a href="roadmap.html" class="footer-link w-inline-block">
+                        <a href="https://www.w3crew.com/roadmap.html" class="footer-link w-inline-block">
                             <div class="text-block">Roadmap</div>
                         </a>
                     </div>
