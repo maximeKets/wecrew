@@ -43,7 +43,7 @@
                 <x-input-error :messages="$errors->get('project-name')"/>
             </x-form>
             <x-form>
-                <textarea class="rounded-2xl italic block mt-2 w-full italic focus:ring-ok shadow-sm"
+                <textarea class="rounded-2xl italic block mt-2 w-full italic focus:ring-ok shadow-sm h-36"
                               name="project-description"
                               maxlength="600"
                               placeholder="think of the project hiring you, they need to know what you did, how you did it and what success uou had. be specific.">{{old('project-description')}}</textarea>

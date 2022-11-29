@@ -12,8 +12,8 @@
             @endif
 
             <div class="flex sm:grid-cols ">
-                <div class="rounded-full grid-cols gap-4 flex items-center p-2 bg-ok">
-                    <img class="rounded-full border-2 border-black aspect-square max-h-16  "
+                <div class="rounded-full grid-cols gap-4 flex items-center p-2 bg-ok pr-4 ">
+                    <img class="rounded-full border-2 border-black aspect-square max-h-16"
                          src="{{asset("user/user_".$user->id . ".jpg")}}" alt="profile">
                     <x-input-title class="flex justify-center" title="{{$user->username}}"/>
                 </div>
@@ -23,7 +23,7 @@
             <div class="grid grid-cols sm:grid-cols-2 gap-4 ">
                 @foreach($user->skills as $skill)
                     <div class=" item-center justify-center flex text-black w-full italic border-2
- rounded-full border-ok py-2 sm:py-4">
+                         rounded-full border-ok py-2 sm:py-4">
                         {{$skill->name}}
                     </div>
                 @endforeach
@@ -80,9 +80,9 @@
                         </x-card-text>
                       @endforeach
                       @foreach($project->links as $link)
-                <div class="grid grid-cols sm:grid-cols-3">
-                    <a  class="item-center justify-center flex text-black w-full italic border-2
- rounded-full border-ok py-2 sm:py-2" href="{{$link->url}}">
+                <div class="flex ">
+                    <a  class="item-center justify-center flex text-black italic px-6 border-2
+ rounded-full border-ok py-2 " href="{{$link->url}}">
 {{$link->name}}
                     </a>
                 </div>

@@ -23,6 +23,8 @@ Route::get('/', function () {
     return redirect('https://www.w3crew.com/'); // Redirect to the main website
 })->name('home');
 
+Route::get('/user/{username}', [HomeController::class, 'showUser'])->name('user');
+
 
 Route::middleware('auth')->group(function () {
     Route::prefix('createprofile')->group(function () {
