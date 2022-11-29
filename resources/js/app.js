@@ -31,6 +31,7 @@ function sizeControllerProfile(input) {
         img.src = URL.createObjectURL(file);
         img.classList.add("rounded-full");
         img.classList.add("aspect-square");
+        img.classList.add("object-cover");
         img.classList.add("w-full");
         img.style.maxHeight = "148px";
         div.appendChild(img);
@@ -51,6 +52,7 @@ function sizeControllerProject(input) {
         let img = document.createElement("img");
         img.src = URL.createObjectURL(file);
         img.classList.add("rounded-2xl");
+        img.classList.add("object-cover");
         img.classList.add("aspect-video");
         img.style.maxHeight = "400px";
         parent.prepend(img);
