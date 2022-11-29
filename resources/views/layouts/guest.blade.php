@@ -38,7 +38,7 @@
             <div class="container-2 w-container">
                 <a href="{{route("home")}}" aria-current="page" class="w-nav-brand w--current"><img src="{{asset('storage/logo.svg')}}" loading="lazy" width="155" alt="" class="image-2"></a>
                 <nav role="navigation" class="nav-menu w-nav-menu">
-                    <a href="about.html" class="nav-link-simple w-nav-link">about</a>
+                    <a href="{{route("home")}}about.html" class="nav-link-simple w-nav-link">about</a>
                     <a href="https://app.w3crew.com/login" class="nav-link-simple w-nav-link">sign in</a>
                     <a href="https://app.w3crew.com/register" class="nav-link w-nav-link">join the crew</a>
                 </nav>
