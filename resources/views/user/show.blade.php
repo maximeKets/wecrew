@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <x-card>
+    <x-card >
         <x-slot name="header">
             <x-header-content title="Profile" subtitle=""
                               extra=""/>
@@ -80,9 +80,9 @@
                         </x-card-text>
                     @endforeach
                     @foreach($project->links as $link)
-                        <div class="flex ">
+                        <div class="flex pb-10">
                             <a  class="item-center justify-center flex text-black italic px-6 border-2
- rounded-full border-ok py-2 " href="{{$link->url}}">
+                         rounded-full border-ok py-2 " href="{{$link->url}}">
                                 {{$link->name}}
                             </a>
                         </div>
