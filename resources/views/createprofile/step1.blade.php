@@ -72,7 +72,7 @@
                           value="{{ old('about') }}"
                           maxlength="500"
                           required
-                          placeholder="talk about who you are and what yo like, your passions and what gets you excited! Why are you working in Web3? anything that you add can help you get hired.">{{ old('about') }}</textarea>
+                          placeholder="talk about who you are and what you like, your passions and what gets you excited! Why are you working in web3? anything that you add can help you get hired.">{{ old('about') }}</textarea>
             </x-form>
             <x-form>
                 <x-input-title title="Your socials"/>
@@ -87,7 +87,7 @@
                                       class="border-transparent focus:border-transparent focus:ring-0"
                                       name="twitter"
                                       value="{{ old('twitter') }}"
-                                      placeholder="@Twitter"
+                                      placeholder="@TwitterHandle"
                                       minlength="2"
                                       required
                                         />

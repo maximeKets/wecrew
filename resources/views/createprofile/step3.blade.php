@@ -46,14 +46,14 @@
                 <textarea class="rounded-2xl italic block mt-2 w-full italic focus:ring-ok shadow-sm h-36"
                               name="project-description"
                               maxlength="600"
-                              placeholder="think of the project hiring you, they need to know what you did, how you did it and what success uou had. be specific.">{{old('project-description')}}</textarea>
+                              placeholder="think of the people hiring you, they need to know what you did, how you did it and what success you had. be specific!">{{old('project-description')}}</textarea>
                 <x-input-error :messages="$errors->get('project-description')"/>
             </x-form>
             <x-form >
                     <x-text-input type="text"
                                   name="twitter"
                                   :value="old('twitter')"
-                                  placeholder="@Twitter"
+                                  placeholder="@TwitterHandle"
                     />
                 <x-input-error :messages="$errors->get('twitter')"/>
 
