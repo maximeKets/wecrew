@@ -23,7 +23,7 @@ class HomeController extends Controller
 
     public function showUser($username)
     {
-        $user = User::where('username', $username)->load('projects.links', 'skills')->firstOrFail();
+        $user = User::where('username', $username)->firstOrFail();
         return view('user.show', ['user' => $user]);
     }
 }
