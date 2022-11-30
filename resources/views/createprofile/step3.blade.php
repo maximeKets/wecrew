@@ -53,17 +53,17 @@
                     <x-icons>
                         {{asset('storage/icons/Twitter.svg')}}
                     </x-icons>
-                    <input id="twitter"
+                    <input id="twitter_link"
                            type="text"
                            class="border-transparent focus:border-transparent focus:ring-0"
-                           name="twitter"
-                           value="{{ old('twitter') }}"
+                           name="twitter_link"
+                           value="{{ old('twitter_link') }}"
                            placeholder="@TwitterHandle"
                            minlength="2"
                            required
                     />
                 </div>
-                <x-input-error :messages="$errors->get('twitter')"/>
+                <x-input-error :messages="$errors->get('twitter_link')"/>
             </x-form>
 
             <x-form>

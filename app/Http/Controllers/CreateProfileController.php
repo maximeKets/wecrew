@@ -85,15 +85,19 @@ class CreateProfileController extends Controller
 
     public function show3()
     {
+        if (Auth::user()->projects->count() > 0) {
+            return redirect()->route('profile.show');
+        }
         return view('createprofile.step3');
     }
 
     public function store3(Request $request)
     {
-        $validatedProject = $request->validate([
+        $validate = $request->validate([
             'project-name' => 'required',
             'project-description' => 'required',
             'project-picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
+            'twitter_link' => 'required|starts_with:@',
         ],
         [
             'project-name.required' => 'please register a name for your project',
@@ -102,25 +106,19 @@ class CreateProfileController extends Controller
             'project-picture.mimes' => 'The file must be a jpeg, png, jpg, gif, svg',
             'project-picture.max' => 'The file must be less than 4MB',
             'project-picture.required' => 'please select a picture for your project',
-        ]);
-
-     $validateLinks = $request->validate([
-            'twitter' => 'required|starts_with:@',
-        ],
-        [
-            'twitter.starts_with' => 'The twitter link must start with @',
-            'twitter.required' => 'You must enter a Twitter link',
+            'twitter_link.starts_with' => 'The twitter link must start with @',
+            'twitter_link.required' => 'You must enter a Twitter link',
         ]);
 
         $project = new Project();
-        $project->name = $validatedProject['project-name'];
-        $project->description = $validatedProject['project-description'];
+        $project->name = $validate['project-name'];
+        $project->description = $validate['project-description'];
         $project->user_id = Auth::user()->id;
         $project->save();
 
         $link = new Link();
-        $link->name = $validateLinks['twitter'];
-        $link->url = "https://twitter.com/" .$validateLinks['twitter'];
+        $link->name = $validate['twitter_link'];
+        $link->url = "https://twitter.com/" .$validate['twitter_link'];
         $link->project_id = $project->id;
         $link->save();
 
