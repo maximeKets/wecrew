@@ -1,4 +1,4 @@
-<div class="min-h-screen flex flex-col sm:justify-center items-center pt-6  ">
+<div class="min-h-screen flex flex-col  items-center pt-10  ">
 
     <div class="w-full sm:max-w-2xl overflow-hidden rounded-t-2xl ">
         <div>
