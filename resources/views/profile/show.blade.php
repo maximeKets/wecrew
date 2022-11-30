@@ -1,8 +1,18 @@
 <x-app-layout>
     <x-card>
         <x-slot name="header">
-            <x-header-content title="Profile" subtitle=""
-                              extra=""/>
+            <x-header-content title="Profile">
+                <x-slot name="subtitle">
+                    <br/>
+                </x-slot>
+                <x-slot name="extra">
+                    <input type="text" value="{{route('user', ['username'=> $user->username])}}" id="share" hidden>
+                    <button class="rounded-full text-xs sm:text-2xl bg-white p-1 sm:p-2 px-4 sm:px-6 outline outline-ok
+                    text-black italic inline-flex items-center justify-center " id="share-button" >
+                        <img src="{{asset('storage/icons/LinkIcon.svg')}}" alt="share" class="h-4 w-4 sm:h-8 sm:w-8">
+                        share</button>
+                </x-slot>
+            </x-header-content>
         </x-slot>
         <x-form>
             @if(session()->has('success'))

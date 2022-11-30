@@ -14,6 +14,23 @@ if (document.getElementById("project-picture")) {
     document.getElementById("project-picture").addEventListener("change", sizeControllerProject);
 }
 
+if (document.getElementById("share-button"))
+    document.getElementById("share-button").addEventListener("click", share);
+
+function share() {
+    let copyText = document.getElementById("share");
+
+    // Select the text field
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // For mobile devices
+
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText.value);
+
+    let button = document.getElementById("share-button");
+    button.innerHTML = "Copied !" ;
+}
+
 
 function sizeControllerProfile(input) {
     let file = input.target.files[0];

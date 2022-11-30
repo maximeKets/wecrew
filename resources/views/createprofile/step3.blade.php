@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-card>
         <x-slot name="header">
-            <div class="pt-2 sm:px-2 sm:pt-4 -mb-10 sm:-mb-10 m-2">
+            <div class="pt-2 sm:pt-4 -mb-2 m-2">
                 <div class="grid grid-cols-4 bg-blue rounded-full">
                     <div class="flex justify-center bg-ok rounded-l-full py-2 items-center">
                         <p class="text-xs sm:text-lg text-blue">Login</p>
