@@ -80,7 +80,7 @@
 
                     <div class="inline-flex border  border-black w-full hover:border-ok rounded-full items-center focus:ring-ok p-1 mt-4 ">
                    <x-icons>
-                       {{asset('storage/icons/twitter.svg')}}
+                       {{asset('storage/icons/Twitter.svg')}}
                    </x-icons>
                         <input id="twitter"
                                       type="text"
@@ -97,7 +97,7 @@
 
                 <div class="inline-flex border  border-black w-full hover:border-ok rounded-full items-center focus:ring-ok p-1 mt-4 ">
                     <x-icons>
-                        {{asset('storage/icons/discord.svg')}}
+                        {{asset('storage/icons/Discord.svg')}}
                     </x-icons>
                     <input id="discord"
                            type="text"
