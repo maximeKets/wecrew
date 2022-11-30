@@ -50,7 +50,7 @@
                     <x-form-display >
                         <a href="https://twitter.com/{{$user->twitter}}" class="inline-flex items-center ">
                             <x-icons>
-                                {{asset('storage/icons/twitter.svg')}}
+                                {{asset('storage/icons/Twitter.svg')}}
                             </x-icons>
                             {{$user->twitter}}
                         </a>
@@ -58,7 +58,7 @@
                     <x-form-display>
                         <a href="https://discord.com" class="inline-flex items-center ">
                             <x-icons >
-                                {{asset('storage/icons/discord.svg')}}
+                                {{asset('storage/icons/Discord.svg')}}
                             </x-icons>{{$user->discord}}
                         </a>
 
