@@ -18,7 +18,7 @@
                 </div>
             </div>
 
-            <x-header-content title="younique " subtitle="Non Fungible You! just like an NFT"
+            <x-header-content title="younique " subtitle="Non Fungible You! Just like an NFT,"
                               extra="there's only one of you {{$user->username}} "/>
         </x-slot>
 
@@ -72,7 +72,7 @@
                           value="{{ old('about') }}"
                           maxlength="500"
                           required
-                          placeholder="talk about who you are and what you like, your passions and what gets you excited! Why are you working in web3? anything that you add can help you get hired.">{{ old('about') }}</textarea>
+                          placeholder="Talk about who you are and what you like, your passions and what gets you excited! Why are you working in web3? anything that you add can help you get hired.">{{ old('about') }}</textarea>
             </x-form>
             <x-form>
                 <x-input-title title="Your socials"/>

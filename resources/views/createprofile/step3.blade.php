@@ -19,7 +19,7 @@
             </div>
 
             <x-header-content title="expert!" subtitle="Show us that you've worked on this stuff before."
-                              extra="Describe what you did and prove it with some links."/>
+                              extra="Describe what you did and show it off via Twitter."/>
         </x-slot>
 
         <form action="{{route("createprofile.step3")}}" method="POST" autocomplete="on" enctype="multipart/form-data">
@@ -28,8 +28,7 @@
                 <x-input-title title="experience"/>
 
                 <x-card-text>
-                    to keep things simple, talk tu us about your best Web3 project so far. The more links
-                    and explanations you put, the better chances to get hired you'll have.
+                    To keep things simple, talk to us about just one of your projects. Make it count, and let us clearly know how you contributed to the project's success.
                 </x-card-text>
             </x-form>
 
@@ -46,7 +45,7 @@
                 <textarea class="rounded-2xl italic block mt-2 w-full italic focus:ring-ok shadow-sm h-36 pl-8"
                               name="project-description"
                               maxlength="600"
-                              placeholder="think of the people hiring you, they need to know what you did, how you did it and what success you had. be specific!">{{old('project-description')}}</textarea>
+                              placeholder="Think of the people hiring you, they need to know what you did, how you did it and what success you had. Be specific!">{{old('project-description')}}</textarea>
                 <x-input-error :messages="$errors->get('project-description')"/>
             </x-form>
             <x-form >
@@ -71,7 +70,7 @@
                 <div class="flex gap-4 grid sm:grid-cols-2 items-center">
                     <div class="flex flex-col items-center ">
                         <x-card-text>
-                            upload project visual 16:9
+                            upload a project visual 16:9
                         </x-card-text>
                         <x-card-text>
                             minimum 960x600px

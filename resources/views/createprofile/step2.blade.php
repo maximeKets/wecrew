@@ -28,7 +28,7 @@
                 <x-input-title title="Your Category"/>
 
                 <x-card-text>
-                    pick your area of expertise
+                    Pick your area of expertise.
                 </x-card-text>
                 <x-input-error :messages="$errors->get('category_id')"/>
             </x-form>
@@ -62,7 +62,7 @@
                 <x-input-title title="Skills"/>
 
                 <x-card-text>
-                    We've pre selected some skills linked to your category.
+                    We've pre-selected some skills linked to your category.
                 </x-card-text>
                 <x-input-error :messages="$errors->get('skills')"/>
             </x-form>
