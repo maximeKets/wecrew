@@ -5,7 +5,7 @@
 
         <x-slot name="header">
 
-            <x-header-content title="ahoy!" subtitle="welcome back mate" extra=" "/>
+            <x-header-content title="ahoy!" subtitle="Welcome back mate" extra=" "/>
 
         </x-slot>
 
