@@ -3,12 +3,12 @@
 
         <x-slot name="header">
 
-            <x-header-content title="No worries" subtitle="Forgot your password?" extra=" "/>
+            <x-header-content title="mayday!" subtitle="Forgot your password?" extra=" "/>
 
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
-            {{ __('Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+            {{ __('No Problems. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
         </div>
 
         <!-- Session Status -->
