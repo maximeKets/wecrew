@@ -52,14 +52,20 @@
                             <x-icons>
                                 {{asset('storage/icons/Twitter.svg')}}
                             </x-icons>
-                            {{$user->twitter}}
+                            <span class="pl-2">
+                                {{$user->twitter}}
+                            </span>
+
                         </a>
                     </x-form-display>
-                    <x-form-display>
+                    <x-form-display >
                         <a href="https://discord.com" class="inline-flex items-center ">
                             <x-icons >
                                 {{asset('storage/icons/Discord.svg')}}
-                            </x-icons>{{$user->discord}}
+                            </x-icons>
+                            <span class="pl-2">
+                                {{$user->discord}}
+                            </span>
                         </a>
 
                     </x-form-display>
