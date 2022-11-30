@@ -43,20 +43,28 @@
                 <x-input-error :messages="$errors->get('project-name')"/>
             </x-form>
             <x-form>
-                <textarea class="rounded-2xl italic block mt-2 w-full italic focus:ring-ok shadow-sm h-36"
+                <textarea class="rounded-2xl italic block mt-2 w-full italic focus:ring-ok shadow-sm h-36 pl-8"
                               name="project-description"
                               maxlength="600"
                               placeholder="think of the people hiring you, they need to know what you did, how you did it and what success you had. be specific!">{{old('project-description')}}</textarea>
                 <x-input-error :messages="$errors->get('project-description')"/>
             </x-form>
             <x-form >
-                    <x-text-input type="text"
-                                  name="twitter"
-                                  :value="old('twitter')"
-                                  placeholder="@TwitterHandle"
+                <div class="inline-flex border  border-black w-full hover:border-ok rounded-full items-center focus:ring-ok p-1 mt-4 ">
+                    <x-icons>
+                        {{asset('storage/icons/twitter.svg')}}
+                    </x-icons>
+                    <input id="twitter"
+                           type="text"
+                           class="border-transparent focus:border-transparent focus:ring-0"
+                           name="twitter"
+                           value="{{ old('twitter') }}"
+                           placeholder="@TwitterHandle"
+                           minlength="2"
+                           required
                     />
+                </div>
                 <x-input-error :messages="$errors->get('twitter')"/>
-
             </x-form>
 
             <x-form>
