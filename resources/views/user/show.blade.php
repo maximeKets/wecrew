@@ -7,10 +7,10 @@
     <meta content="{{$user->about}}" name="description">
     <meta content="{{$user->username}} - W3CREW PROFILE " property="og:title">
     <meta content="{{$user->about}}" property="og:description">
-    <meta content="https://app.w3crew.com/user/user_{{$user->id}}.jpg" property="og:image">
+    <meta content="{{asset("user/user_".$user->id . ".jpg")}}" property="og:image">
     <meta content="{{$user->username}} - W3CREW PROFILE " property="twitter:title">
     <meta content="{{$user->about}}" property="twitter:description">
-    <meta content="https://app.w3crew.com/user/user_{{$user->id}}.jpg" property="twitter:image">
+    <meta content="{{asset("user/user_".$user->id . ".jpg")}}" property="twitter:image">
     <meta property="og:type" content="website">
     <meta content="summary_large_image" name="twitter:card">
     <meta content="width=device-width, initial-scale=1" name="viewport">
