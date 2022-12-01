@@ -4,18 +4,15 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="title" content="W3CREW - Find your web3 crew"/>
-        <meta name="description"
-            content="w3're in beta! freelancers register now. Phase 1 of W3CREW is calling all freelancers working in web3 to set up their profiles."
-        />
-        <meta property="og:url" content="https://app.w3crew.com/"/>
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="W3CREW" />
-        <meta property="og:description"
-            content="w3're in beta! freelancers register now. Phase 1 of W3CREW is calling all freelancers working in web3 to set up their profiles."
-        />
-        <meta property="og:image" content="https://www.w3crew.com/images/CC_Website_16_9.png" />
+        <meta content="W3CREW is an awesome utility for building teams. Finding a crew for your project has never been easier! W3CREW connects project owners and freelancers in a trusted user friendly platform. No more DMs. No more time wasted. Phase 1 of W3CREW is calling all freelancers working in web3 to set up their profiles." name="description">
+        <meta content="W3CREW - W3&#x27;RE IN BETA - JOIN THE CREW" property="og:title">
+        <meta content="W3CREW is an awesome utility for building teams. Finding a crew for your project has never been easier! W3CREW connects project owners and freelancers in a trusted user friendly platform. No more DMs. No more time wasted. Phase 1 of W3CREW is calling all freelancers working in web3 to set up their profiles." property="og:description">
+        <meta content="https://uploads-ssl.webflow.com/6352b3ee3bc91e36df9c3b4f/6374f05dfd7e607038214714_W3CREW%20webclip.png" property="og:image">
+        <meta content="W3CREW - W3&#x27;RE IN BETA - JOIN THE CREW" property="twitter:title">
+        <meta content="W3CREW is an awesome utility for building teams. Finding a crew for your project has never been easier! W3CREW connects project owners and freelancers in a trusted user friendly platform. No more DMs. No more time wasted. Phase 1 of W3CREW is calling all freelancers working in web3 to set up their profiles." property="twitter:description">
+        <meta content="https://uploads-ssl.webflow.com/6352b3ee3bc91e36df9c3b4f/6374f05dfd7e607038214714_W3CREW%20webclip.png" property="twitter:image">
+        <meta property="og:type" content="website">
+        <meta content="summary_large_image" name="twitter:card">
         <meta content="width=device-width, initial-scale=1" name="viewport">
         <link  href="{{ asset('/css/normalize.css') }}" rel="stylesheet" type="text/css">
         <link  href="{{ asset('/css/webflow.css') }}" rel="stylesheet" type="text/css">
@@ -100,5 +97,6 @@
     <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6352b3ee3bc91e36df9c3b4f" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="{{ asset('/js/webflow.js') }}" type="text/javascript"></script>
     <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+
     </body>
 </html>
