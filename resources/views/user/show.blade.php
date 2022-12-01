@@ -7,7 +7,7 @@
     <meta content="{{$user->about}}" name="description">
     <meta content="{{$user->username}} - W3CREW PROFILE " property="og:title">
     <meta content="{{$user->about}}" property="og:description">
-    <meta content="https://uploads-ssl.webflow.com/6352b3ee3bc91e36df9c3b4f/6374f05dfd7e607038214714_W3CREW%20webclip.png" property="og:image">
+    <meta content="https://app.w3crew.com/user/user_{{$user->id}}.jpg" property="og:image">
     <meta content="{{$user->username}} - W3CREW PROFILE " property="twitter:title">
     <meta content="{{$user->about}}" property="twitter:description">
     <meta content="https://app.w3crew.com/user/user_{{$user->id}}.jpg" property="twitter:image">
