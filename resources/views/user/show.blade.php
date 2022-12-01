@@ -10,9 +10,10 @@
     <meta content="{{asset("user/user_".$user->id . ".jpg")}}" property="og:image">
     <meta content="{{$user->username}} - W3CREW PROFILE " property="twitter:title">
     <meta content="{{$user->about}}" property="twitter:description">
-    <meta content="{{asset("user/user_".$user->id . ".jpg")}}" property="twitter:image">
-    <meta property="og:type" content="website">
     <meta content="summary_large_image" name="twitter:card">
+    <meta content="profile-picture" name="og:image:alt">
+    <meta content="https://app.w3crew.com/user/user_{{$user->id}}.jpg" property="twitter:image">
+    <meta property="og:type" content="website">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="{{ asset('/css/normalize.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('/css/webflow.css') }}" rel="stylesheet" type="text/css">
