@@ -19,7 +19,7 @@
                 </div>
             </div>
 
-            <x-header-content title="AYE !" subtitle="working in the web3 space ? "
+            <x-header-content title="AYE !" subtitle="Working in the web3 space? "
                               extra="You've found the right place! "/>
 
         </x-slot>
