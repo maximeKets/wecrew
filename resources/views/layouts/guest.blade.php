@@ -36,6 +36,7 @@
     <header>
         <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
             <div class="container-2 w-container">
+                <w3m-core-button></w3m-core-button>
                 <a href="{{route("home")}}" aria-current="page" class="w-nav-brand w--current"><img src="{{asset('storage/logo.svg')}}" loading="lazy" width="155" alt="" class="image-2"></a>
                 <nav role="navigation" class="nav-menu w-nav-menu">
                     <a href="https://www.w3crew.com/about.html" class="nav-link-simple w-nav-link">About</a>

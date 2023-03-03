@@ -26,4 +26,11 @@ class HomeController extends Controller
         $user = User::where('username', $username)->firstOrFail();
         return view('user.show', ['user' => $user]);
     }
+
+    public function listUsers()
+    {
+        $users = User::all();
+        return view('user.list', ['users' => $users]);
+    }
+
 }
