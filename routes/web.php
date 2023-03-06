@@ -24,6 +24,9 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/profiles', [HomeController::class, 'listUsers'])->name('list.profiles');
+Route::get('/profiles/load-more', [HomeController::class, 'loadMoreUsers'])->name('load-more-users');
+Route::get('/profiles/{category}', [HomeController::class, 'listUsersByCategory'])->name('list.profiles.category');
+
 
 Route::get('/user/{username}', [HomeController::class, 'showUser'])->name('user');
 

@@ -16,16 +16,11 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+
         User::factory()
-//            ->hasAttached(
-//                Skill::factory()
-//                    ->count(2)
-//                    ->state(function (array $attributes, User $user) {
-//                        return [
-//                            'category_id' => Category::inRandomOrder()->first()->id,
-//                        ];
-//                    })
-//            )
+            ->hasAttached(
+                Skill::all()->random(3)
+            )
             ->count(100)
             ->create();
     }

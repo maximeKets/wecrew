@@ -6,6 +6,9 @@ module.exports = {
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
+        "./resources/**/*.blade.php",
+        "./resources/**/*.js",
+        "./resources/**/*.vue",
     ],
 
     theme: {
@@ -40,6 +43,12 @@ module.exports = {
             'delete': '#D53E53',
             'blue': '#0B2F46',
             'background': '#efeee9',
+            'color1' : '#CCD661',
+            'color2' : '#399DAD',
+            'color3' : '#D53E53',
+            'color4' : '#E3754B',
+            'color5' : '#83B07A',
+            'color6' : '#EFC989',
         },
         extend: {
             fontFamily: {

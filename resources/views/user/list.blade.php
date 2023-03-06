@@ -4,20 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-{{--    <meta content="{{$user->about}}" name="description">--}}
-{{--    <meta content="{{$user->username}} - W3CREW PROFILE " property="og:title">--}}
-{{--    <meta content="{{$user->about}}" property="og:description">--}}
-{{--    <meta content="{{asset("user/user_".$user->id . ".jpg")}}" property="og:image">--}}
-{{--    <meta content="{{$user->username}} - W3CREW PROFILE " property="twitter:title">--}}
-{{--    <meta content="{{$user->about}}" property="twitter:description">--}}
-{{--    <meta content="summary_large_image" name="twitter:card">--}}
-{{--    <meta content="profile-picture" name="og:image:alt">--}}
-{{--    <meta content="https://app.w3crew.com/user/user_{{$user->id}}.jpg" property="twitter:image">--}}
+    {{--    <meta content="{{$user->about}}" name="description">--}}
+    {{--    <meta content="{{$user->username}} - W3CREW PROFILE " property="og:title">--}}
+    {{--    <meta content="{{$user->about}}" property="og:description">--}}
+    {{--    <meta content="{{asset("user/user_".$user->id . ".jpg")}}" property="og:image">--}}
+    {{--    <meta content="{{$user->username}} - W3CREW PROFILE " property="twitter:title">--}}
+    {{--    <meta content="{{$user->about}}" property="twitter:description">--}}
+    {{--    <meta content="summary_large_image" name="twitter:card">--}}
+    {{--    <meta content="profile-picture" name="og:image:alt">--}}
+    {{--    <meta content="https://app.w3crew.com/user/user_{{$user->id}}.jpg" property="twitter:image">--}}
     <meta property="og:type" content="website">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="{{ asset('/css/normalize.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('/css/webflow.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('/css/w3crew.webflow.css') }}" rel="stylesheet" type="text/css">
+{{--    <link href="{{ asset('/css/w3crew.webflow.css') }}" rel="stylesheet" type="text/css">--}}
+    <link href="{{ asset('/css/w3crew-2.webflow.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('/images/favicon.png') }}" rel="shortcut icon" type="image/x-icon">
     <link href="{{ asset('/images/webclip.png') }}" rel="apple-touch-icon">
     <title>{{ config('app.name', 'W3CREW') }}</title>
@@ -37,8 +38,6 @@
         }(window, document);</script>
 
     <!-- Scripts -->
-    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.4/dist/flowbite.min.css"/>
-    <script src="https://unpkg.com/flowbite@1.5.4/dist/flowbite.js"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
@@ -60,8 +59,61 @@
         </div>
     </div>
 </header>
-<div class="min-h-screen m-5">
+{{--<div class="min-h-screen m-5">--}}
+{{--</div>--}}
+
+
+<body class="body">
+<div class="main">
+    <div class="div-block">
+        <div class="h1">find your web3 crew</div>
+        <div class="p">We&#x27;re i n B3TA phase 2 ! For the past few weeks we&#x27;ve asked freelancers to fill in
+            their profiles.
+        </div>
+        <div class="p">Now you can filter through our categories to quickly find the right profile that you’re looking
+            for.
+        </div>
+        <div class="mt-bloc">
+            <div class="p bold">Click on one of the categories below to start &gt;</div>
+        </div>
+    </div>
+    <div class="div-block-2">
+        @foreach($categories as $category)
+            <div class="button-category hover:text-black category{{$category->id}}">
+            <a href="{{ route('list.profiles.category', $category->id ) }}">
+                {{$category->name}}
+            </a>
+            </div>
+        @endforeach
+    </div>
+    <div class="grid  xl:grid-cols-4 gap-6 md:grid-cols-2 grid-cols-1 " id="listing">
+        @foreach($users as $user)
+        <div  class="card">
+            <div class="ratio-box _4-3">
+                <div class="content-block-2 bg-color{{$user->category_id}}  ">
+                    <div class="div-block-10"
+                         style="background-image: url('{{ asset('images/background.png') }}')"
+                    >
+                </div>
+                    <div class="div-block-11 ">
+                        <div style="background-image: url('{{ asset('/images/avatar.jpeg') }}')" class="avatar"></div>
+                        <div class="name">{{$user->username}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="sub-category">
+                @foreach($user->skills as $skill)
+                <div class="button-category small color{{$skill->category_id}} ">{{$skill->name}}</div>
+                @endforeach
+            </div>
+        </div>
+        @endforeach
+
+    </div>
+    <button id="load-more">Load more</button>
+
 </div>
+
 
 <div class="footer wf-section">
     <div class="container w-container">
@@ -130,13 +182,49 @@
         </div>
     </div>
 </div>
+</body>
 <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6352b3ee3bc91e36df9c3b4f"
         type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
         crossorigin="anonymous"></script>
-<script src="{{ asset('/js/webflow.js') }}" type="text/javascript"></script>
-<script src="{{ asset('/js/webflow.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/webflow.js') }}" type="text/javascript"></script>
 <!-- [if lte IE 9]>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+<script>
+    $(document).ready(function() {
+        var offset = 15;
+        var limit = 15;
+        $('#load-more').click(function() {
+            $.get('{{ route("load-more-users") }}?offset=' + offset, function(data) {
+                if (data.length > 0) {
+                    $.each(data, function(index, user) {
+                        let html = '<div class="card">' +
+                            '<div class="ratio-box _4-3">' +
+                            '<div class="content-block-2 bg-color' + user.category_id + '">' +
+                            '<div class="div-block-10" style="background-image: url(' + '{{ asset('images/background.png') }}'  + ')"></div>' +
+                            '<div class="div-block-11 ">' +
+                            '<div style="background-image: url(' + '{{ asset('images/avatar.jpeg') }}'  + ')" class="avatar"></div>' +
+                            '<div class="name">' + user.username + '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div class="sub-category">';
+
+                        $.each(user.skills, function(i, skill) {
+                            html += '<div class="button-category small color' + skill.category_id + '">' + skill.name + '</div>';
+                        });
+
+                        html += '</div></div>';
+                       $("#listing").append(html)
+                    });
+                    offset += limit;
+                } else {
+                    $('#load-more').hide();
+                }
+            });
+        });
+    });
+
+</script>
 
 </body>
 </html>

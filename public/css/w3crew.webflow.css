@@ -25,6 +25,7 @@ body {
     max-width: 1440px;
 }
 
+
 .hp_titleblock {
     width: 100%;
     margin: 40px auto;
@@ -809,6 +810,8 @@ body {
     justify-content: space-around;
     grid-column-gap: 20px;
 }
+
+
 
 .content-block {
     width: 30%;
