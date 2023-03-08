@@ -30,9 +30,12 @@ class HomeController extends Controller
 
     public function listUsers()
     {
+        $filter = 0;
         $categories = Category::all();
-        $users = User::limit(15)->get();
-        return view('user.list', ['users' => $users, 'categories' => $categories]);
+        $users = User::limit(15)
+            ->orderBy('created_at', 'desc')
+            ->get();
+        return view('user.list', ['users' => $users, 'categories' => $categories, 'filter' => $filter]);
     }
 
     public function loadMoreUsers(Request $request)
@@ -52,6 +55,7 @@ class HomeController extends Controller
             $users->where('category_id', $category);
         }
         $users = $users->offset($offset)
+            ->orderBy('created_at', 'desc')
             ->limit(15)
             ->get();
 
@@ -60,9 +64,13 @@ class HomeController extends Controller
 
     public function listUsersByCategory($category)
     {
+        $filter = $category;
         $categories = Category::all();
-        $users = User::where('category_id', $category)->limit(15)->get();
-        return view('user.list', ['users' => $users, 'categories' => $categories]);
+        $users = User::where('category_id', $category)
+            ->orderBy('created_at', 'desc')
+            ->limit(15)
+            ->get();
+        return view('user.list', ['users' => $users, 'categories' => $categories, 'filter' => $filter]);
     }
 
 

@@ -23,13 +23,13 @@ class UserFactory extends Factory
             'discord' => fake()->url(),
             'about' => fake()->paragraph(),
             'twitter' => fake()->url(),
+            'created_at' => fake()->dateTimeThisDecade(),
             'email_verified_at' => fake()->dateTimeThisDecade(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
             'is_admin' => fake()->boolean(10),
             'profil_picture' => fake()->filePath(),
             'category_id' => fake()->numberBetween(1, 6),
-
         ];
     }
 

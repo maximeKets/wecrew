@@ -4,21 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    {{--    <meta content="{{$user->about}}" name="description">--}}
-    {{--    <meta content="{{$user->username}} - W3CREW PROFILE " property="og:title">--}}
-    {{--    <meta content="{{$user->about}}" property="og:description">--}}
-    {{--    <meta content="{{asset("user/user_".$user->id . ".jpg")}}" property="og:image">--}}
-    {{--    <meta content="{{$user->username}} - W3CREW PROFILE " property="twitter:title">--}}
-    {{--    <meta content="{{$user->about}}" property="twitter:description">--}}
-    {{--    <meta content="summary_large_image" name="twitter:card">--}}
-    {{--    <meta content="profile-picture" name="og:image:alt">--}}
-    {{--    <meta content="https://app.w3crew.com/user/user_{{$user->id}}.jpg" property="twitter:image">--}}
     <meta property="og:type" content="website">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="{{ asset('/css/normalize.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('/css/webflow.css') }}" rel="stylesheet" type="text/css">
-{{--    <link href="{{ asset('/css/w3crew.webflow.css') }}" rel="stylesheet" type="text/css">--}}
-    <link href="{{ asset('/css/w3crew-2.webflow.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('/css/w3crew.webflow.css') }}" rel="stylesheet" type="text/css">
+    {{--    <link href="{{ asset('/css/w3crew-2.webflow.css') }}" rel="stylesheet" type="text/css">--}}
     <link href="{{ asset('/images/favicon.png') }}" rel="shortcut icon" type="image/x-icon">
     <link href="{{ asset('/images/webclip.png') }}" rel="apple-touch-icon">
     <title>{{ config('app.name', 'W3CREW') }}</title>
@@ -48,7 +39,7 @@
             <a href="{{route("home")}}" aria-current="page" class="w-nav-brand w--current"><img
                     src="{{asset('storage/logo.svg')}}" loading="lazy" width="155" alt="" class="image-2"></a>
             <nav role="navigation" class="nav-menu w-nav-menu flex justify-center items-center">
-                <w3m-core-button></w3m-core-button>
+{{--                <w3m-core-button></w3m-core-button>   TODO: connect to wallet for real --}}
                 <a href="https://www.w3crew.com/about.html" class="nav-link-simple w-nav-link">About</a>
                 <a href="{{route('login')}}" class="nav-link-simple w-nav-link">Sign in</a>
                 <a href="{{route('register')}}" class="nav-link w-nav-link">Join the crew</a>
@@ -59,66 +50,123 @@
         </div>
     </div>
 </header>
-{{--<div class="min-h-screen m-5">--}}
-{{--</div>--}}
-
-
-<body class="body">
-<div class="main">
-    <div class="div-block">
-        <div class="h1">find your web3 crew</div>
-        <div class="p">We&#x27;re i n B3TA phase 2 ! For the past few weeks we&#x27;ve asked freelancers to fill in
-            their profiles.
-        </div>
-        <div class="p">Now you can filter through our categories to quickly find the right profile that you’re looking
-            for.
-        </div>
-        <div class="mt-bloc">
-            <div class="p bold">Click on one of the categories below to start &gt;</div>
-        </div>
-    </div>
-    <div class="div-block-2">
-        @foreach($categories as $category)
-            <div class="button-category hover:text-black category{{$category->id}}">
-            <a href="{{ route('list.profiles.category', $category->id ) }}">
-                {{$category->name}}
-            </a>
+<div class="body">
+    <div class="main">
+        <div class="div-block">
+            <div class="h1">find your web3 crew</div>
+            <div class="p">We&#x27;re i n B3TA phase 2 ! For the past few weeks we&#x27;ve asked freelancers to fill in
+                their profiles.
             </div>
-        @endforeach
-    </div>
-    <div class="grid  xl:grid-cols-4 gap-6 md:grid-cols-2 grid-cols-1 " id="listing">
-        @foreach($users as $user)
-        <div  class="card">
-            <div class="ratio-box _4-3">
-                <div class="content-block-2 bg-color{{$user->category_id}}  ">
-                    <div class="div-block-10"
-                         style="background-image: url('{{ asset('images/background.png') }}')"
-                    >
+            <div class="p">Now you can filter through our categories to quickly find the right profile that you’re
+                looking
+                for.
+            </div>
+            <div class="mt-bloc">
+                <div class="p bold">Click on one of the categories below to start &gt;</div>
+            </div>
+        </div>
+        <div class="div-block-list3">
+            <div class="flex items-center">
+                <svg width="30" height="14" viewBox="0 0 30 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="1" y1="1" x2="29" y2="1" stroke="url(#paint0_linear_632_2783)" stroke-width="2"
+                          stroke-linecap="round"/>
+                    <line x1="6" y1="7" x2="24" y2="7" stroke="url(#paint1_linear_632_2783)" stroke-width="2"
+                          stroke-linecap="round"/>
+                    <line x1="11" y1="13" x2="19" y2="13" stroke="url(#paint2_linear_632_2783)" stroke-width="2"
+                          stroke-linecap="round"/>
+                    <defs>
+                        <linearGradient id="paint0_linear_632_2783" x1="25.689" y1="2.20113" x2="24.7689" y2="6.55832"
+                                        gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#25708F"/>
+                            <stop offset="1" stop-color="#4EAB98"/>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_632_2783" x1="22.126" y1="8.20113" x2="20.8157" y2="12.3376"
+                                        gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#25708F"/>
+                            <stop offset="1" stop-color="#4EAB98"/>
+                        </linearGradient>
+                        <linearGradient id="paint2_linear_632_2783" x1="18.563" y1="14.2011" x2="16.5054" y2="17.4491"
+                                        gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#25708F"/>
+                            <stop offset="1" stop-color="#4EAB98"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            @foreach($categories as $category)
+                @if( $filter == $category->id )
+                    <div class="button-category text-black bg-color{{$category->id}}">
+                        <a href="{{ route('list.profiles.category', $category->id ) }}">
+                            {{$category->name}}
+                        </a>
+                    </div>
+                @else
+                    <div class="button-category hover:text-black category{{$category->id}}">
+                        <a href="{{ route('list.profiles.category', $category->id ) }}">
+                            {{$category->name}}
+                        </a>
+                    </div>
+                @endif
+            @endforeach
+            @if( $filter != 0 )
+                <div class="button-category hover:text-black categoryreset">
+                    <a href="{{ route('list.profiles')  }}">
+                        Clear filter
+                    </a>
                 </div>
-                    <div class="div-block-11 ">
-                        <div style="background-image: url('{{ asset('/images/avatar.jpeg') }}')" class="avatar"></div>
-                        <div class="name">{{$user->username}}</div>
+            @endif
+        </div>
+        <div class="grid  xl:grid-cols-4 gap-6 md:grid-cols-3 grid-cols-1 sm:grid-cols-2" id="listing">
+            @foreach($users as $user)
+                <div class="card ">
+                    <div class="ratio-box _4-3">
+
+                        <div class="content-block-2 ">
+                            <div class="div-block-list justify-center z-10 "
+                                 id="profile-picture"
+                                 style="background-image: url('{{ asset('images/background.png') }}');"
+                            >
+                                <div class="div-block-list justify-center z-20 h-full "
+                                     id="background-hover"></div>
+                                <div class="z-50 flex justify-center items-center"
+                                     id="button-hover">
+                                    <button class="button-view-profile bg-white z-40">
+                                        <a target="_blank" href="{{route('user', $user->username)}}">
+                                            view profile
+                                        </a>
+                                    </button>
+                                </div>
+
+                            </div>
+                            <div class="div-block-list2 bg-color{{$user->category_id}}  ">
+                                <div style="background-image: url('{{ asset('/images/avatar.jpeg') }}')"
+                                     class="avatar"></div>
+                                <div class="name">{{$user->username}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-category">
+                        @foreach($user->skills as $skill)
+                            <div class="button-category small color{{$skill->category_id}} ">{{$skill->name}}</div>
+                        @endforeach
                     </div>
                 </div>
-            </div>
-            <div class="sub-category">
-                @foreach($user->skills as $skill)
-                <div class="button-category small color{{$skill->category_id}} ">{{$skill->name}}</div>
-                @endforeach
-            </div>
+            @endforeach
+
         </div>
-        @endforeach
+        <div class="flex justify-center items-center w-full">
+            <button class="mt-10" id="load-more">
+                <p class="button-category bg-ok border-black border-1 text-xl text-black py-4 px-8">Load more</p>
+            </button>
+        </div>
+
 
     </div>
-    <button id="load-more">Load more</button>
-
 </div>
-
-
 <div class="footer wf-section">
     <div class="container w-container">
         <div class="div-block-4">
-            <div class="div-block-10">
+            <div class="div-block-list">
                 <div class="html-embed-3 w-embed">
                     <svg width="600" height="auto" viewbox="0 0 825 141" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -183,6 +231,7 @@
     </div>
 </div>
 </body>
+
 <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6352b3ee3bc91e36df9c3b4f"
         type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
         crossorigin="anonymous"></script>
@@ -190,33 +239,70 @@
 <!-- [if lte IE 9]>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
 <script>
-    $(document).ready(function() {
+
+    function listenFromHover() {
+        const imagesProfil = document.querySelectorAll("#profile-picture");
+
+        imagesProfil.forEach(imageProfil => {
+            const enfantImageProfil = imageProfil.querySelector("#background-hover");
+            const boutonImageProfil = imageProfil.querySelector("#button-hover");
+
+            imageProfil.addEventListener("mouseover", () => {
+                enfantImageProfil.style.display = "flex";
+                boutonImageProfil.style.display = "flex";
+            });
+
+            imageProfil.addEventListener("mouseout", () => {
+                enfantImageProfil.style.display = "none";
+                boutonImageProfil.style.display = "none";
+            });
+        });
+    }
+
+    listenFromHover()
+
+    $(document).ready(function () {
         var offset = 15;
         var limit = 15;
-        $('#load-more').click(function() {
-            $.get('{{ route("load-more-users") }}?offset=' + offset, function(data) {
+        $('#load-more').click(function () {
+            $.get('{{ route("load-more-users") }}?offset=' + offset, function (data) {
                 if (data.length > 0) {
-                    $.each(data, function(index, user) {
-                        let html = '<div class="card">' +
+                    $.each(data, function (index, user) {
+
+                        let html =
+                            '<div class="card">' +
                             '<div class="ratio-box _4-3">' +
-                            '<div class="content-block-2 bg-color' + user.category_id + '">' +
-                            '<div class="div-block-10" style="background-image: url(' + '{{ asset('images/background.png') }}'  + ')"></div>' +
-                            '<div class="div-block-11 ">' +
-                            '<div style="background-image: url(' + '{{ asset('images/avatar.jpeg') }}'  + ')" class="avatar"></div>' +
+                            '<div class="content-block-2">' +
+                            '<div class="div-block-list justify-center z-10 " ' +
+                            'id="profile-picture" ' +
+                            'style="background-image: url(' + '{{ asset('images/background.png') }}' + '" >' +
+                            '<div class="div-block-list justify-center z-20 h-full " id="background-hover"></div>' +
+                            '<div class="z-50 flex justify-center items-center" id="button-hover">' +
+                            '<button class="button-view-profile bg-white z-40">' +
+                            '<a target="_blank" href="https://app.w3crew.com/user/' + user.username + ' ">' +
+                            'view profile' +
+                            '</a>' +
+                            '</button>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div class="div-block-list2 bg-color' + user.category_id + '">' +
+                            '<div style="background-image: url(' + '{{ asset('images/avatar.jpeg') }}' + ')" class="avatar"></div>' +
                             '<div class="name">' + user.username + '</div>' +
                             '</div>' +
                             '</div>' +
                             '</div>' +
                             '<div class="sub-category">';
 
-                        $.each(user.skills, function(i, skill) {
+
+                        $.each(user.skills, function (i, skill) {
                             html += '<div class="button-category small color' + skill.category_id + '">' + skill.name + '</div>';
                         });
 
                         html += '</div></div>';
-                       $("#listing").append(html)
+                        $("#listing").append(html)
                     });
                     offset += limit;
+                    listenFromHover()
                 } else {
                     $('#load-more').hide();
                 }
