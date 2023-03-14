@@ -1,44 +1,9 @@
 import './bootstrap';
-import {
-    EthereumClient,
-    modalConnectors,
-    walletConnectProvider,
-} from "@web3modal/ethereum";
-import { Web3Modal } from "@web3modal/html";
-import { configureChains, createClient } from "@wagmi/core";
-import { arbitrum, mainnet, polygon } from "@wagmi/core/chains";
-
-
 import Alpine from 'alpinejs';
 
 window.Alpine = Alpine;
 
 Alpine.start();
-
-
-const chains = [arbitrum, mainnet, polygon];
-
-// Wagmi Core Client
-const { provider } = configureChains(chains, [
-    walletConnectProvider({ projectId: "065982a5fa812fc9c68f3d1a40969986" }),
-]);
-const wagmiClient = createClient({
-    autoConnect: true,
-    connectors: modalConnectors({
-        projectId: "065982a5fa812fc9c68f3d1a40969986",
-        version: "1", // or "2"
-        appName: "web3Modal",
-        chains,
-    }),
-    provider,
-});
-
-// Web3Modal and Ethereum Client
-const ethereumClient = new EthereumClient(wagmiClient, chains);
-const web3modal = new Web3Modal(
-    { projectId: "065982a5fa812fc9c68f3d1a40969986" },
-    ethereumClient
-);
 
 if (document.getElementById("profil_picture")) {
     document.getElementById("profil_picture").addEventListener("change", sizeControllerProfile);
