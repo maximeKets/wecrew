@@ -276,12 +276,12 @@
                     console.log(data)
                     $.each(data, function (index, user) {
 
-                        if (user.projects.length > 0) {
-                            console.log(user.projects[0].id)
-                        } else {
-                            console.log('no project')
-
-                        }
+                        // if (user.projects.length > 0) {
+                        //     console.log(user.projects[0].id)
+                        // } else {
+                        //     console.log('no project')
+                        //
+                        // }
 
                         let html =
                             '<div class="card">' +
