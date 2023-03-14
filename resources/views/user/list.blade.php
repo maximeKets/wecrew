@@ -129,7 +129,9 @@
                             <div class="div-block-list justify-center z-10 "
                                  id="profile-picture"
                                  @if($user->projects->count() > 0)
-                                     style="background-image: url('{{asset("project/user_".$user->id . "_project_". $project->id . ".jpg")}}') ">
+                                     @foreach($user->projects as $project)
+                                         style="background-image: url('{{asset("project/user_".$user->id . "_project_". $project->id . ".jpg")}}') ">
+                                @endforeach
                                 @else
                                     style="background-image: url('{{ asset('images/background.png') }}')" >
                                 @endif
@@ -276,12 +278,12 @@
                     console.log(data)
                     $.each(data, function (index, user) {
 
-                        // if (user.projects.length > 0) {
-                        //     console.log(user.projects[0].id)
-                        // } else {
-                        //     console.log('no project')
-                        //
-                        // }
+                        if (user.projects.length > 0) {
+                            console.log(user.projects[0].id)
+                        } else {
+                            console.log('no project')
+
+                        }
 
                         let html =
                             '<div class="card">' +
