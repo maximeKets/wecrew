@@ -128,8 +128,15 @@
                         <div class="content-block-2 ">
                             <div class="div-block-list justify-center z-10 "
                                  id="profile-picture"
-                                 style="background-image: url('{{ asset('images/background.png') }}');"
-                            >
+                                 @if($user->projects->count() > 0)
+                                     @foreach($user->projects as $project)
+                                         @if($project->picture)
+                                             style="background-image: url('{{asset("project/user_".$user->id . "_project_". $project->id . ".jpg")}}') ">
+                                @endif
+                                @endforeach
+                                @else
+                                    style="background-image: url('{{ asset('images/background.png') }}')" >
+                                @endif
                                 <div class="div-block-list justify-center z-20 h-full "
                                      id="background-hover"></div>
                                 <div class="z-50 flex justify-center items-center"
