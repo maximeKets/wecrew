@@ -39,7 +39,7 @@
             <a href="{{route("home")}}" aria-current="page" class="w-nav-brand w--current"><img
                     src="{{asset('storage/logo.svg')}}" loading="lazy" width="155" alt="" class="image-2"></a>
             <nav role="navigation" class="nav-menu w-nav-menu flex justify-center items-center">
-{{--                <w3m-core-button></w3m-core-button>   TODO: connect to wallet for real --}}
+                {{--                <w3m-core-button></w3m-core-button>   TODO: connect to wallet for real --}}
                 <a href="https://www.w3crew.com/about.html" class="nav-link-simple w-nav-link">About</a>
                 <a href="{{route('login')}}" class="nav-link-simple w-nav-link">Sign in</a>
                 <a href="{{route('register')}}" class="nav-link w-nav-link">Join the crew</a>
@@ -111,8 +111,9 @@
             @if( $filter != 0 )
                 <div class="button-category text-black border-black">
                     <a href="{{ route('list.profiles')  }}" class="flex justify-center items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                             stroke="currentColor" class="w-6 h-6 mr-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
                         </svg>
                         Clear filter
                     </a>
@@ -139,10 +140,9 @@
                                         </a>
                                     </button>
                                 </div>
-
                             </div>
                             <div class="div-block-list2 bg-color{{$user->category_id}}  ">
-                                <div style="background-image: url('{{ asset('/images/avatar.jpeg') }}')"
+                                <div style="background-image: url('{{ asset('/user/user_'. $user->id . '.jpg') }}')"
                                      class="avatar"></div>
                                 <div class="name">{{$user->username}}</div>
                             </div>
