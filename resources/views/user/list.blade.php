@@ -129,11 +129,7 @@
                             <div class="div-block-list justify-center z-10 "
                                  id="profile-picture"
                                  @if($user->projects->count() > 0)
-                                     @foreach($user->projects as $project)
-                                         @if($project->picture)
-                                             style="background-image: url('{{asset("project/user_".$user->id . "_project_". $project->id . ".jpg")}}') ">
-                                @endif
-                                @endforeach
+                                     style="background-image: url('{{asset("project/user_".$user->id . "_project_". $project->id . ".jpg")}}') ">
                                 @else
                                     style="background-image: url('{{ asset('images/background.png') }}')" >
                                 @endif
@@ -280,13 +276,24 @@
                     console.log(data)
                     $.each(data, function (index, user) {
 
+                        if (user.projects.length > 0) {
+                            console.log(user.projects[0].id)
+                        } else {
+                            console.log('no project')
+
+                        }
+
                         let html =
                             '<div class="card">' +
                             '<div class="ratio-box _4-3">' +
                             '<div class="content-block-2">' +
                             '<div class="div-block-list justify-center z-10 " ' +
                             'id="profile-picture" ' +
+                            // if (user.projects.length > 0) {
+                            //    + 'style="background-image: url(\'https://app.w3crew.com/project/user_' + user.id + '_project_' + user.projects[0].id + '.jpg\')" >'
+                            // } else {
                             'style="background-image: url(' + '{{ asset('images/background.png') }}' + '" >' +
+                            // }
                             '<div class="div-block-list justify-center z-20 h-full " id="background-hover"></div>' +
                             '<div class="z-50 flex justify-center items-center" id="button-hover">' +
                             '<button class="button-view-profile bg-white z-40">' +
@@ -297,7 +304,7 @@
                             '</div>' +
                             '</div>' +
                             '<div class="div-block-list2 bg-color' + user.category_id + '">' +
-                            '<div style="background-image: url(\'https://app.w3crew.com/user/user_' + user.id +'.jpg\')" class="avatar"></div>' +
+                            '<div style="background-image: url(\'https://app.w3crew.com/user/user_' + user.id + '.jpg\')" class="avatar"></div>' +
                             '<div class="name">' + user.username + '</div>' +
                             '</div>' +
                             '</div>' +
