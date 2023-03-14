@@ -66,7 +66,7 @@
             </div>
         </div>
         <div class="div-block-list3">
-            <div class="flex items-center">
+            <div class=" hidden  items-center h-full justify-center md:flex">
                 <svg width="30" height="14" viewBox="0 0 30 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <line x1="1" y1="1" x2="29" y2="1" stroke="url(#paint0_linear_632_2783)" stroke-width="2"
                           stroke-linecap="round"/>
@@ -109,8 +109,11 @@
                 @endif
             @endforeach
             @if( $filter != 0 )
-                <div class="button-category hover:text-black categoryreset">
-                    <a href="{{ route('list.profiles')  }}">
+                <div class="button-category text-black border-black">
+                    <a href="{{ route('list.profiles')  }}" class="flex justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
                         Clear filter
                     </a>
                 </div>

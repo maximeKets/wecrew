@@ -1390,6 +1390,10 @@ body {
     background-clip: border-box;
     -webkit-text-fill-color: inherit;
 }
+#profile-picture {
+ background-repeat: no-repeat;
+    background-size: cover;
+}
 
 .sub-category {
     display: -webkit-box;
@@ -1500,11 +1504,6 @@ body {
     border-radius: 20px;
 }
 
-.categoryreset{
-    background-color: #3d4852;
-}
-
-
 .category1:hover {
     background-color: #CCD661;
 }
@@ -1528,11 +1527,6 @@ body {
 .category6:hover {
     background-color: #EFC989;
 }
-.categoryreset:hover {
-    background-color: #363636;
-}
-
-
 
 .bg-color1 {
     background-color: #CCD661;
@@ -1690,11 +1684,12 @@ body {
         -webkit-box-pack: start;
         -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
-        justify-content: flex-start;
+        justify-content: center;
         -webkit-box-align: start;
         -webkit-align-items: flex-start;
         -ms-flex-align: start;
         align-items: flex-start;
+        text-align: center;
         -webkit-box-flex: 0;
         -webkit-flex: 0 auto;
         -ms-flex: 0 auto;
