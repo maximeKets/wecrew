@@ -277,6 +277,7 @@
         $('#load-more').click(function () {
             $.get('{{ route("load-more-users") }}?offset=' + offset, function (data) {
                 if (data.length > 0) {
+                    console.log(data)
                     $.each(data, function (index, user) {
 
                         let html =
@@ -296,7 +297,7 @@
                             '</div>' +
                             '</div>' +
                             '<div class="div-block-list2 bg-color' + user.category_id + '">' +
-                            '<div style="background-image: url("https://app.w3crew.com/user/user_' + user.id + '.jpg")" class="avatar"></div>' +
+                            '<div style="background-image: url(\'https://app.w3crew.com/user/user_' + user.id +'.jpg\')" class="avatar"></div>' +
                             '<div class="name">' + user.username + '</div>' +
                             '</div>' +
                             '</div>' +

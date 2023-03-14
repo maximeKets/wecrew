@@ -50,7 +50,7 @@ class HomeController extends Controller
                 $category = $lastPart;
             }
         }
-        $users = User::with("skills");
+        $users = User::with("skills", "projects");
         if ($category) {
             $users->where('category_id', $category);
         }
