@@ -1348,8 +1348,9 @@ body {
     background-position: 0px 0px;
     background-size: contain;
 }
+
 #background-hover {
-    background-color: #1a202c ;
+    background-color: #1a202c;
     opacity: 0.6;
     height: 76%;
     position: absolute;
@@ -1357,7 +1358,7 @@ body {
     display: none;
 }
 
-#button-hover{
+#button-hover {
     display: none;
 }
 
@@ -1390,8 +1391,10 @@ body {
     background-clip: border-box;
     -webkit-text-fill-color: inherit;
 }
+
 #profile-picture {
- background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
 }
 
@@ -1446,7 +1449,7 @@ body {
     display: flex;
     padding: 5px 20px;
     color: rgba(0, 0, 0, 0.89);
-    font-size: 1.1rem;
+    font-size: 0.9rem;
 }
 
 .content-block-2 {
@@ -1486,7 +1489,7 @@ body {
     background-color: #dee8eb;
 }
 
-.button-view-profile{
+.button-view-profile {
     display: flex;
     padding: 10px 30px;
     color: rgba(0, 0, 0, 0.89);
@@ -1652,7 +1655,6 @@ body {
     }
 
 
-
     .style-guide-wrapper {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
@@ -1789,6 +1791,7 @@ body {
         font-size: 1.9rem;
         line-height: 100%;
     }
+
     .div-block {
         display: -webkit-box;
         display: -webkit-flex;

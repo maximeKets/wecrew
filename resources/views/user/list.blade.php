@@ -95,36 +95,33 @@
             </div>
             @foreach($categories as $category)
                 @if( $filter == $category->id )
-                    <div class="button-category text-black bg-color{{$category->id}}">
-                        <a href="{{ route('list.profiles.category', $category->id ) }}">
-                            {{$category->name}}
-                        </a>
-                    </div>
+                    <a href="{{ route('list.profiles.category', $category->id ) }}"
+                       class="button-category text-black bg-color{{$category->id}} border-black">
+                        {{$category->name}}
+                    </a>
                 @else
-                    <div class="button-category hover:text-black category{{$category->id}}">
-                        <a href="{{ route('list.profiles.category', $category->id ) }}">
-                            {{$category->name}}
-                        </a>
-                    </div>
+                    <a href="{{ route('list.profiles.category', $category->id ) }}"
+                       class="button-category hover:text-black category{{$category->id}}">
+                        {{$category->name}}
+                    </a>
                 @endif
             @endforeach
             @if( $filter != 0 )
-                <div class="button-category text-black border-black">
-                    <a href="{{ route('list.profiles')  }}" class="flex justify-center items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                             stroke="currentColor" class="w-6 h-6 mr-2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-                        </svg>
-                        Clear filter
-                    </a>
-                </div>
+                <a href="{{ route('list.profiles')  }}"
+                   class="button-category text-black border-black flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                         stroke="currentColor" class="w-6 h-6 mr-2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                    Clear filter
+                </a>
+
             @endif
         </div>
         <div class="grid  xl:grid-cols-4 gap-6 md:grid-cols-3 grid-cols-1 sm:grid-cols-2" id="listing">
             @foreach($users as $user)
                 <div class="card ">
                     <div class="ratio-box _4-3">
-
                         <div class="content-block-2 ">
                             <div class="div-block-list justify-center z-10 "
                                  id="profile-picture"
@@ -139,11 +136,10 @@
                                      id="background-hover"></div>
                                 <div class="z-50 flex justify-center items-center"
                                      id="button-hover">
-                                    <button class="button-view-profile bg-white z-40">
-                                        <a target="_blank" href="{{route('user', $user->username)}}">
-                                            view profile
-                                        </a>
-                                    </button>
+                                    <a target="_blank" href="{{route('user', $user->username)}}"
+                                       class="button-view-profile bg-white z-40">
+                                        view profile
+                                    </a>
                                 </div>
                             </div>
                             <div class="div-block-list2 bg-color{{$user->category_id}}  ">
@@ -154,9 +150,12 @@
                         </div>
                     </div>
                     <div class="sub-category">
-                        @foreach($user->skills as $skill)
-                            <div class="button-category small color{{$skill->category_id}} ">{{$skill->name}}</div>
-                        @endforeach
+                        @for($i = 0; $i < 4; $i++ )
+                            @if(isset($user->skills[$i]))
+                                <div
+                                    class="button-category small color{{$user->skills[$i]->category_id}} ">{{$user->skills[$i]->name}}</div>
+                            @endif
+                        @endfor
                     </div>
                 </div>
             @endforeach
@@ -281,7 +280,7 @@
                         let projectPicture = ""
 
                         if (user.projects.length > 0) {
-                            projectPicture = "https://app.w3crew.com/project/user_" + user.id +"_project_"+ user.projects[0].id +".jpg"
+                            projectPicture = "https://app.w3crew.com/project/user_" + user.id + "_project_" + user.projects[0].id + ".jpg"
                         } else {
                             projectPicture = "{{ asset('images/background.png') }}"
 
@@ -312,7 +311,7 @@
                             '<div class="sub-category">';
 
 
-                        $.each(user.skills, function (i, skill) {
+                        $.each(user.skills.slice(0, 4), function (i, skill) {
                             html += '<div class="button-category small color' + skill.category_id + '">' + skill.name + '</div>';
                         });
 
