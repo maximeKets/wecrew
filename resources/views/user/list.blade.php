@@ -278,10 +278,12 @@
                     console.log(data)
                     $.each(data, function (index, user) {
 
+                        let projectPicture = ""
+
                         if (user.projects.length > 0) {
-                            console.log(user.projects[0].id)
+                            projectPicture = "https://app.w3crew.com/project/user_" + user.id +"_project_"+ user.projects[0].id +".jpg"
                         } else {
-                            console.log('no project')
+                            projectPicture = "{{ asset('images/background.png') }}"
 
                         }
 
@@ -291,11 +293,7 @@
                             '<div class="content-block-2">' +
                             '<div class="div-block-list justify-center z-10 " ' +
                             'id="profile-picture" ' +
-                            // if (user.projects.length > 0) {
-                            //    + 'style="background-image: url(\'https://app.w3crew.com/project/user_' + user.id + '_project_' + user.projects[0].id + '.jpg\')" >'
-                            // } else {
-                            'style="background-image: url(' + '{{ asset('images/background.png') }}' + '" >' +
-                            // }
+                            'style="background-image: url(' + projectPicture + ')" >' +
                             '<div class="div-block-list justify-center z-20 h-full " id="background-hover"></div>' +
                             '<div class="z-50 flex justify-center items-center" id="button-hover">' +
                             '<button class="button-view-profile bg-white z-40">' +
