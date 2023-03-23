@@ -130,7 +130,7 @@
                                          style="background-image: url('{{asset("project/user_".$user->id . "_project_". $project->id . ".jpg")}}') ">
                                 @endforeach
                                 @else
-                                    style="background-image: url('{{ asset('images/background.png') }}')" >
+                                    style="background-image: url('{{ asset('images/default-background.png') }}')" >
                                 @endif
                                 <div class="div-block-list justify-center z-20 h-full "
                                      id="background-hover"></div>
@@ -282,7 +282,7 @@
                         if (user.projects.length > 0) {
                             projectPicture = "https://app.w3crew.com/project/user_" + user.id + "_project_" + user.projects[0].id + ".jpg"
                         } else {
-                            projectPicture = "{{ asset('images/background.png') }}"
+                            projectPicture = "{{ asset('images/default-background.png') }}"
 
                         }
 
