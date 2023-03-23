@@ -295,11 +295,9 @@
                             'style="background-image: url(' + projectPicture + ')" >' +
                             '<div class="div-block-list justify-center z-20 h-full " id="background-hover"></div>' +
                             '<div class="z-50 flex justify-center items-center" id="button-hover">' +
-                            '<button class="button-view-profile bg-white z-40">' +
-                            '<a target="_blank" href="https://app.w3crew.com/user/' + user.username + ' ">' +
+                            '<a target="_blank" class="button-view-profile bg-white z-40" href="https://app.w3crew.com/user/' + user.username + ' ">' +
                             'view profile' +
                             '</a>' +
-                            '</button>' +
                             '</div>' +
                             '</div>' +
                             '<div class="div-block-list2 bg-color' + user.category_id + '">' +
