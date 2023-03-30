@@ -53,8 +53,8 @@
 <div class="body">
     <div class="main">
         <div class="div-block">
-            <div class="h1">find your web3 crew</div>
-            <div class="p">We&#x27;re i n B3TA phase 2 ! For the past few weeks we&#x27;ve asked freelancers to fill in
+            <div class="h1 not-italic ">find your web3 crew</div>
+            <div class="p">We&#x27;re in B3TA phase 2 ! For the past few weeks we&#x27;ve asked freelancers to fill in
                 their profiles.
             </div>
             <div class="p">Now you can filter through our categories to quickly find the right profile that you’re
@@ -162,9 +162,11 @@
 
         </div>
         <div class="flex justify-center items-center w-full">
-            <button class="mt-10" id="load-more">
-                <p class="button-category bg-ok border-black border-1 text-xl text-black py-4 px-8">Load more</p>
-            </button>
+            @if($users->count() == 32 )
+                <button class="mt-10" id="load-more">
+                    <p class="button-category bg-ok border-black border-1 text-xl text-black py-4 px-8">Load more</p>
+                </button>
+            @endif
         </div>
 
 
@@ -274,7 +276,6 @@
         $('#load-more').click(function () {
             $.get('{{ route("load-more-users") }}?offset=' + offset, function (data) {
                 if (data.length > 0) {
-                    console.log(data)
                     $.each(data, function (index, user) {
 
                         let projectPicture = ""
@@ -318,7 +319,9 @@
                     });
                     offset += limit;
                     listenFromHover()
-                } else {
+
+                }
+                if (data.length < limit) {
                     $('#load-more').hide();
                 }
             });

@@ -32,7 +32,7 @@ class HomeController extends Controller
     {
         $filter = 0;
         $categories = Category::all();
-        $users = User::limit(15)
+        $users = User::limit(32)
             ->where('category_id', '!=', null)
             ->orderBy('created_at', 'desc')
             ->get();
@@ -58,7 +58,7 @@ class HomeController extends Controller
         $users = $users->offset($offset)
             ->where('category_id', '!=', null)
             ->orderBy('created_at', 'desc')
-            ->limit(15)
+            ->limit(32)
             ->get();
 
         return response()->json($users);
@@ -70,7 +70,7 @@ class HomeController extends Controller
         $categories = Category::all();
         $users = User::where('category_id', $category)
             ->orderBy('created_at', 'desc')
-            ->limit(15)
+            ->limit(32)
             ->get();
         return view('user.list', ['users' => $users, 'categories' => $categories, 'filter' => $filter]);
     }
