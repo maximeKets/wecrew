@@ -72,7 +72,6 @@
                 </div>
             </div>
         </x-form>
-
         <x-form>
             @if($user->projects->count() > 0)
 
@@ -121,7 +120,6 @@
                 </div>
             @endif
         </x-form>
-
         <x-form>
             <div class="flex justify-center mt-20">
                 <section>

@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
 
         User::factory()
             ->hasAttached(
-                Skill::all()->random(3)
+                Skill::all()->random(5)
             )
             ->count(100)
             ->create();

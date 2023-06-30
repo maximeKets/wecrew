@@ -34,8 +34,6 @@
     <body>
         <div class="min-h-screen m-5 ">
             @include('layouts.navigation')
-
-
             <!-- Page Content -->
             <main>
                 {{ $slot }}
