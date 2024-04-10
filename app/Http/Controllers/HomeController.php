@@ -3,28 +3,28 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\Link;
-use App\Models\Project;
 use App\Models\User;
 use Illuminate\Http\Request;
-use File;
-use function Termwind\render;
+use Illuminate\View\View;
+use Psy\VersionUpdater\Downloader\Factory;
 
 class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * @return Factory| View
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('home');
+        return view('home.home',
+            ['user' => $request->user()]); // TODO: check if needed to get user for connection
     }
 
     public function showUser($username)
     {
         $user = User::where('username', $username)->firstOrFail();
+
         return view('user.show', ['user' => $user]);
     }
 
@@ -36,6 +36,7 @@ class HomeController extends Controller
             ->where('category_id', '!=', null)
             ->orderBy('created_at', 'desc')
             ->get();
+
         return view('user.list', ['users' => $users, 'categories' => $categories, 'filter' => $filter]);
     }
 
@@ -51,7 +52,7 @@ class HomeController extends Controller
                 $category = $lastPart;
             }
         }
-        $users = User::with("skills", "projects");
+        $users = User::with('skills', 'projects');
         if ($category) {
             $users->where('category_id', $category);
         }
@@ -72,8 +73,8 @@ class HomeController extends Controller
             ->orderBy('created_at', 'desc')
             ->limit(32)
             ->get();
+
         return view('user.list', ['users' => $users, 'categories' => $categories, 'filter' => $filter]);
     }
-
 
 }
