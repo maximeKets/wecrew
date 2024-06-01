@@ -1,4 +1,18 @@
-# 🛠️ Utility [W3CREW]
+<a href="https://www.figma.com">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma" height="20"/>
+Figma 
+</a>
+<br/>
+<a href="https://cosmic-crew.gitbook.io/cosmic-crew-whitepaper/cosmic-crew-whitepaper/roadmap">
+🚏 RoadMap
+</a>
+<br/>
+<a href="https://cosmic-crew.gitbook.io/cosmic-crew-whitepaper/cosmic-crew-whitepaper/utility-w3crew">
+📄 WhitePapper 
+</a>
+
+
+# 🛠️ W3CREW
 
 W3CREW est une plateforme exceptionnelle pour construire des équipes.
 
@@ -34,6 +48,6 @@ Une fois que vous avez présélectionné vos freelances, vous pouvez leur envoye
 
 Lorsqu'un accord est conclu, votre paiement est sécurisé dans l'entiercement jusqu'à ce que le travail soit terminé.
 
-## Lancement de la version bêta
+## Documentation 
 
-W3CREW lancera une version bêta limitée dans les prochains jours.
+<a href=""
