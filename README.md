@@ -1,13 +1,16 @@
-<a href="https://www.figma.com/file/icxdtzthGRZHc04rBp8CtP/W3CREW-Phase-1?node-id=487%3A1340&t=GcWEGDAiIZ1P8Lm6-1">
+<a href="https://www.figma.com/file/icxdtzthGRZHc04rBp8CtP/W3CREW-Phase-1?node-id=487%3A1340&t=GcWEGDAiIZ1P8Lm6-1"
+    target="_blank">
   <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma" height="20"/>
 Figma 
 </a>
 <br/>
-<a href="https://cosmic-crew.gitbook.io/cosmic-crew-whitepaper/cosmic-crew-whitepaper/roadmap">
+<a href="https://cosmic-crew.gitbook.io/cosmic-crew-whitepaper/cosmic-crew-whitepaper/roadmap"
+target="_blank">
 🚏 RoadMap
 </a>
 <br/>
-<a href="https://cosmic-crew.gitbook.io/cosmic-crew-whitepaper/cosmic-crew-whitepaper/utility-w3crew">
+<a href="https://cosmic-crew.gitbook.io/cosmic-crew-whitepaper/cosmic-crew-whitepaper/utility-w3crew"
+target="_blank">
 📄 WhitePapper 
 </a>
 
