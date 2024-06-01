@@ -48,6 +48,4 @@ Une fois que vous avez présélectionné vos freelances, vous pouvez leur envoye
 
 Lorsqu'un accord est conclu, votre paiement est sécurisé dans l'entiercement jusqu'à ce que le travail soit terminé.
 
-## Documentation 
 
-<a href=""
