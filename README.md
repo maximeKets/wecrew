@@ -1,66 +1,39 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🛠️ Utility [W3CREW]
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+W3CREW est une plateforme exceptionnelle pour construire des équipes.
 
-## About Laravel
+Avec la blockchain au cœur, le Web3 rend possible une gamme croissante de nouvelles applications et services. Nous envisageons un avenir où le Web 3.0 deviendra courant, avec des centaines de millions, voire des milliards, d'utilisateurs et de nouvelles entreprises y migreront. Ces projets auront besoin d'équipes, et W3CREW sera la meilleure plateforme pour les constituer. La vieille façon de travailler est révolue. Plus de messages privés, plus de tickets, plus de temps perdu. Trouver votre équipe n'a jamais été aussi facile !
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Qu'est-ce que W3CREW ?
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+W3CREW est une plateforme où les propriétaires de projets web3 peuvent trouver les meilleurs freelances dans le domaine. Elle est conçue pour être extrêmement facile à utiliser et fera gagner beaucoup de temps lors de la création d'un projet web3. W3CREW proposera un service d'entiercement pour les paiements, garantissant la sécurité pour les deux parties.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Pour les Freelances Web3 :
 
-## Learning Laravel
+Nous voulons mettre fin aux tracas des freelances qui doivent s'inscrire à de nombreux canaux Discord et coller le même message partout pour promouvoir leurs services. W3CREW sera leur unique plateforme où ils pourront mettre à jour leurs derniers projets et communiquer directement avec les propriétaires de projets.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Comment ça marche :
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Les freelances téléchargent leurs profils, incluant la catégorie dans laquelle ils travaillent (Art & design, vidéo & animation, développement, marketing, communauté et droit) ainsi que leurs compétences. Chaque profil doit remplir au moins un projet sur lequel ils ont déjà travaillé, afin de s'assurer que seules des personnes expérimentées sont disponibles sur la plateforme.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Une fois acceptés, leurs profils apparaîtront lorsque les propriétaires de projets rechercheront des critères correspondant à leurs compétences.
 
-## Laravel Sponsors
+Les freelances sélectionnés peuvent ensuite discuter avec les personnes cherchant à les embaucher directement sur la plateforme. Ils peuvent accepter ou refuser des offres et négocier leur prix.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Lorsqu'un accord est conclu, l'argent est mis en entiercement sur W3CREW et est transféré une fois la tâche complétée.
 
-### Premium Partners
+## Pour les Propriétaires de Projets :
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+W3CREW vous évitera de perdre du temps à parcourir des messages de spam de personnes offrant leurs services sur Discord ou Twitter. Nous voulons être la plateforme super facile à utiliser pour vous aider à trouver les meilleures personnes, votre équipe, pour travailler sur vos projets.
 
-## Contributing
+### Comment ça marche :
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Une barre de recherche simple pour taper les compétences que vous recherchez. La recherche puissante de W3CREW vous montrera les meilleurs freelances correspondant à ces compétences dans une liste simple. Vous pouvez voir sur quels projets ils ont travaillé et leurs avis avant même de cliquer sur leur profil.
 
-## Code of Conduct
+Une fois que vous avez présélectionné vos freelances, vous pouvez leur envoyer des messages et poser des questions supplémentaires pour vous aider à choisir le bon pour le projet.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Lorsqu'un accord est conclu, votre paiement est sécurisé dans l'entiercement jusqu'à ce que le travail soit terminé.
 
-## Security Vulnerabilities
+## Lancement de la version bêta
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+W3CREW lancera une version bêta limitée dans les prochains jours.
